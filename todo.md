@@ -1,7 +1,7 @@
-# Typography and color refinement scope
+# Demo video and installer placeholder scope
 
-- [x] Audit the current type scale, font pairing, color tokens, and contrast hierarchy.
-- [x] Define a quieter, more technical typography and palette direction.
-- [x] Refine the global CSS without changing the product information architecture.
-- [x] Verify the homepage and Downloads page at desktop and mobile sizes.
-- [ ] Save the refined visual system as a stable checkpoint.
+- [x] Audit the existing demo anchor/section and Downloads platform cards.
+- [x] Define a clean video-led demo block with an explicit future video source slot.
+- [x] Add desktop installer placeholders for Windows and macOS with unavailable states.
+- [x] Verify homepage and Downloads responsiveness plus build output.
+- [ ] Save the updated website as a stable checkpoint.
