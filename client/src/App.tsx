@@ -1,4 +1,4 @@
-/* Design philosophy: Editorial Utility — keep the shell quiet so the proof-led home page carries the visual system. */
+/* Design philosophy: Sober Product Site — keep routing clear and utility-oriented: Product, Demo, and Downloads. */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -6,11 +6,13 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Downloads from "./pages/Downloads";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/downloads" component={Downloads} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

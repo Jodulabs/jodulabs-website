@@ -68,3 +68,13 @@ Use a custom monogram mark built from two offset right angles: one represents th
 - Use real product screenshots from the repository as proof assets; do not invent customer testimonials, ratings, or reviews.
 - Keep all media outside the project directory and reference uploaded asset URLs.
 - Add a short style reminder at the top of every CSS, component, and page file touched during the redesign.
+
+## Style Decisions — Sober Product Site
+
+The site is no longer a pitch deck or founder-marketing page. It should behave like a product reference site for a serious technical company. The hierarchy is now: what Jodu is, what it currently does, where it runs, how to see it in action, and where to get it.
+
+Language must be factual and restrained. Remove broad claims, inflated outcomes, urgency, invented proof, and customer-style language. Use product nouns and concrete verbs: plan, compose, review, quantify, schedule, export, download.
+
+The primary proof is a clean demo from Jodu and authentic product screenshots. The website should not imply customers, traction, reviews, or availability that the team has not confirmed. Desktop and Android should be labeled independently, with unreleased platforms clearly marked as coming soon or in development.
+
+Navigation should expose Product, Demo, and Downloads. The Downloads page is a utility page, not a sales page: show platform status, version/release information when available, and clear next actions. The visual system keeps the warm paper and clay accent but reduces decorative framing, hero theatrics, and promotional CTA density.
