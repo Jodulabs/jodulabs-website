@@ -180,7 +180,7 @@ export default function Home() {
             </div>
           </div>
           <div className="container hero-rule">
-            <span>BROWSER APP / LIVE</span>
+            <span>BROWSER APP / SAAS / LIVE</span>
             <span>DESKTOP / IN PREPARATION</span>
             <span>ANDROID / INTERNAL TESTING</span>
           </div>
@@ -354,7 +354,9 @@ export default function Home() {
             </div>
             <div className="platform-summary">
               <div>
-                <span className="platform-state">BROWSER APP / LIVE</span>
+                <span className="platform-state">
+                  BROWSER APP / SAAS / LIVE
+                </span>
                 <h3>Jodu in the browser</h3>
                 <p>
                   The current account-based workspace for authoring and
