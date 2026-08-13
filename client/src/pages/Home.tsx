@@ -3,13 +3,13 @@
 import { useState } from "react";
 import { ArrowRight, Check, ChevronDown, Menu, MoveUpRight, Play, X } from "lucide-react";
 
-const assets = { canvas: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-plan-canvas.png", preview: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-3d-preview.png", quantities: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-quantities.png", schedules: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-schedules.png", sheet: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/plan-sheet.png" };
+const assets = { canvas: "/product/ui-plan-canvas.png", preview: "/product/ui-3d-preview.png", quantities: "/product/ui-quantities.png", schedules: "/product/ui-schedules.png", sheet: "/product/plan-sheet-30x40-g1-1.png" };
 const brandIcon = "/jodulabs-infinite-mark.png";
 const faqs = [
   ["What is Jodu?", "Jodu is a focused authoring tool for Indian residential plans. It helps you compose a home on one plan canvas and keep the related review and document work connected."],
   ["Who is it for?", "Jodu is being made for civil engineers, draftspersons, and residential contractors working on G+1 and G+2 projects."],
   ["Where is Jodu available?", "The desktop release is in preparation. An Android companion app is also in development. Platform status and download links are kept current on the Downloads page."],
-  ["Does Jodu replace existing CAD tools?", "No. Jodu is a focused surface for residential planning and downstream coordination. It is intended to work alongside the tools you already use."],
+  ["What comes out of a Jodu project?", "Floor plans, door, window, room, wall and stair schedules, a quantity take-off, and a priced bill of quantities — all read from the same model, so they agree with each other and stay in step as the house changes."],
 ];
 
 export default function Home() {
