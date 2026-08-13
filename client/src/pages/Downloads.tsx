@@ -2,7 +2,7 @@
 /* Design philosophy: Quiet Confidence — the approved Infinite Dwellings mark anchors platform status without turning the Downloads page into a campaign surface. */
 import { ArrowDownToLine, ArrowUpRight, Check, Smartphone, Monitor } from "lucide-react";
 
-const brandIcon = "/manus-storage/jodulabs-infinite-mark_60b550c7.png";
+const brandIcon = "/jodulabs-infinite-mark.png";
 
 
 export default function Downloads() {
