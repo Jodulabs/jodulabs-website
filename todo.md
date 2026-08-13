@@ -30,3 +30,9 @@
 - [ ] Repoint icon references to /jodulabs-infinite-mark.png.
 - [ ] Remove the unused waitlist texture rule and verify no forbidden references remain.
 - [ ] Run the build and commit the fix.
+
+# Push checkpoint scope
+
+- [ ] Verify checkpoint 9d98c9fd and the connected Jodulabs/jodulabs-website remote.
+- [ ] Push the checkpoint to the intended GitHub branch.
+- [ ] Verify the remote commit and report the result.
