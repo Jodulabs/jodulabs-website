@@ -2,15 +2,15 @@
 /* Design philosophy: Quiet Confidence — the approved Infinite Dwellings mark anchors platform status without turning the Downloads page into a campaign surface. */
 import { ArrowDownToLine, ArrowUpRight, Check, Smartphone, Monitor } from "lucide-react";
 
-const brandIcon = "/jodulabs-infinite-mark.png";
+const architecturalMark = <><span className="mark-frame mark-frame-a" /><span className="mark-frame mark-frame-b" /></>;
 
 
 export default function Downloads() {
   return (
     <div className="utility-page">
       <header className="site-nav" data-testid="downloads-navigation">
-        <a className="brand" href="/" aria-label="Jodu home"><span className="brand-mark" aria-hidden="true"><img src={brandIcon} alt="" /></span><span>jodu</span></a>
-        <nav className="desktop-nav"><a href="/">Product</a><a href="/#demo">Demo</a><a className="is-active" href="/downloads">Downloads</a><a href="mailto:hello@jodulabs.com">Contact <ArrowUpRight size={13} /></a></nav>
+        <a className="brand" href="/" aria-label="Jodu home"><span className="brand-mark" aria-hidden="true">{architecturalMark}</span><span className="brand-word">jodu</span></a>
+        <nav className="desktop-nav"><a href="/">Product</a><a href="/#demo">Demo</a><a href="/#plans">Plans</a><a className="is-active" href="/downloads">Downloads</a><a href="mailto:hello@jodulabs.com">Contact <ArrowUpRight size={13} /></a></nav>
         <a className="nav-cta" href="/#waitlist">Join the pilot <ArrowUpRight size={14} /></a>
       </header>
       <main className="downloads-main container">
@@ -22,7 +22,7 @@ export default function Downloads() {
         </div>
         <section className="download-notes"><div><span className="eyebrow">Release notes</span><h2>Clear status.<br /><em>No guesswork.</em></h2></div><div className="download-note-list"><div><Check size={16} /><p>Downloads will be linked directly to the official Jodu release.</p></div><div><Check size={16} /><p>Platform status will be updated as builds move from development to testing and release.</p></div><div><Check size={16} /><p>For early access, use the pilot request on the product page.</p></div></div></section>
       </main>
-      <footer className="site-footer"><div className="container footer-grid"><div><a className="brand" href="/"><span className="brand-mark" aria-hidden="true"><img src={brandIcon} alt="" /></span><span>jodu</span></a><p>Residential planning, made coherent.</p></div><div className="footer-links"><a href="/">Product</a><a href="/#demo">Demo</a><a href="/downloads">Downloads</a><a href="mailto:hello@jodulabs.com">Email us</a></div><div className="footer-meta"><span>Jodu Labs / India</span><span>© 2026</span></div></div></footer>
+      <footer className="site-footer"><div className="container footer-grid"><div><a className="brand" href="/"><span className="brand-mark" aria-hidden="true">{architecturalMark}</span><span className="brand-word">jodu</span></a><p>Residential planning, made coherent.</p></div><div className="footer-links"><a href="/">Product</a><a href="/#demo">Demo</a><a href="/#plans">Plans</a><a href="/downloads">Downloads</a><a href="mailto:hello@jodulabs.com">Email us</a></div><div className="footer-meta"><span>Jodu Labs / India</span><span>© 2026</span></div></div></footer>
     </div>
   );
 }

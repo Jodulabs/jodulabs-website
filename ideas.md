@@ -78,3 +78,13 @@ Language must be factual and restrained. Remove broad claims, inflated outcomes,
 The primary proof is a clean demo from Jodu and authentic product screenshots. The website should not imply customers, traction, reviews, or availability that the team has not confirmed. Desktop and Android should be labeled independently, with unreleased platforms clearly marked as coming soon or in development.
 
 Navigation should expose Product, Demo, and Downloads. The Downloads page is a utility page, not a sales page: show platform status, version/release information when available, and clear next actions. The visual system keeps the warm paper and clay accent but reduces decorative framing, hero theatrics, and promotional CTA density.
+
+## Style Decisions — Plans and Product Proof
+
+The Jodu mark reads as two offset architectural right angles, with a small clay terminal detail on the final “u”. The mark is the compact brand signal; it should not drift toward a generic loop or abstract technology symbol.
+
+Jodu Clay is used as a redline annotation system: section squares, status marks, active states, callout rules, and key action cues. It is not a broad decorative wash.
+
+Every major product visual is presented as a labeled drawing-set sheet with a concrete caption for the output shown: canvas, quantities, schedules, or plan sheet. The site uses authentic product captures only.
+
+Plans are intentionally provisional. The homepage may show the shape of access — Pilot, Individual, and Team — but must clearly label unreleased plans and avoid invented prices, limits, or availability. The website stays product-first; “About us” and investor-facing company sections are not part of the default information architecture unless there is real material to add.
