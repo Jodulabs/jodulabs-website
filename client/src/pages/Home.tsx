@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowRight, Check, ChevronDown, Menu, MoveUpRight, Play, X } from "lucide-react";
 
 const assets = { canvas: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-plan-canvas.png", preview: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-3d-preview.png", quantities: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-quantities.png", schedules: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/ui-schedules.png", sheet: "https://raw.githubusercontent.com/Jodulabs/website/main/frontend/public/screenshots/plan-sheet.png" };
-const brandIcon = "/manus-storage/jodulabs-infinite-mark_60b550c7.png";
+const brandIcon = "/jodulabs-infinite-mark.png";
 const faqs = [
   ["What is Jodu?", "Jodu is a focused authoring tool for Indian residential plans. It helps you compose a home on one plan canvas and keep the related review and document work connected."],
   ["Who is it for?", "Jodu is being made for civil engineers, draftspersons, and residential contractors working on G+1 and G+2 projects."],
