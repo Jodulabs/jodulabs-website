@@ -1,7 +1,7 @@
 // Post-build step for production deploys. Runs after `pnpm build`.
-// Removes Manus editor tooling from the output and adds what a static host needs.
-// Referenced from the Cloudflare Pages build command; if this file goes missing
-// the build fails rather than silently shipping the editor runtime.
+// Removes Manus editor tooling from the build output.
+// Referenced from the Cloudflare build command; if this file goes missing the
+// build fails rather than silently shipping the editor runtime.
 import fs from "node:fs";
 import path from "node:path";
 
@@ -22,8 +22,10 @@ fs.writeFileSync(htmlPath, doc);
 // Manus browser-log collector, shipped as a static asset.
 fs.rmSync(path.join(OUT, "__manus__"), { recursive: true, force: true });
 
-// SPA fallback so /downloads resolves on a static host.
-fs.writeFileSync(path.join(OUT, "_redirects"), "/*    /index.html   200\n");
+// No _redirects file here. SPA fallback comes from not_found_handling in
+// wrangler.jsonc. A `/* /index.html 200` rule is redundant with it and is
+// rejected by the Workers API as a self-referential loop (code 100324),
+// which fails the deploy after a successful upload.
 
 console.log(
   `index.html ${(before / 1024).toFixed(0)} KB -> ${(Buffer.byteLength(doc) / 1024).toFixed(1)} KB`
