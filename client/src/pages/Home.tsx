@@ -1,30 +1,100 @@
-/* Design philosophy: Sober Product Site — explain the instrument plainly, show the working surface, and keep every commercial statement honest while the product is still taking shape. */
-/* Design philosophy: Quiet Confidence — the approved Infinite Dwellings mark is the primary brand signal, used with restraint beside precise product typography. */
-import { type FormEvent, useState } from "react";
-import { ArrowRight, Check, ChevronDown, Menu, MoveUpRight, Play, X } from "lucide-react";
+/* Design philosophy: Sober Product Site — explain the current product surface, show real outputs, and use platform status as information rather than persuasion. */
+import { useState } from "react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  ChevronDown,
+  Menu,
+  MoveUpRight,
+  X,
+} from "lucide-react";
 
+const appUrl = "https://app.jodulabs.com/";
 const assets = {
-  canvas: "/manus-storage/ui-plan-canvas_1f67ce2a.png",
-  preview: "/manus-storage/ui-3d-preview_4c1994bd.png",
-  quantities: "/manus-storage/ui-quantities_f41ebe94.png",
-  schedules: "/manus-storage/ui-schedules_9f680bdf.png",
-  sheet: "/manus-storage/ui-sheet-composer_a3b3f7c7.png",
+  canvas: "/product/ui-plan-canvas.png",
+  preview: "/product/ui-3d-preview.png",
+  quantities: "/product/ui-quantities.png",
+  schedules: "/product/ui-schedules.png",
+  sheet: "/product/plan-sheet-30x40-g1-1.png",
 };
-
 const architecturalMark = <><span className="mark-frame mark-frame-a" /><span className="mark-frame mark-frame-b" /></>;
 
-const faqs = [
-  ["What is Jodu?", "Jodu is a focused authoring tool for Indian residential plans. It helps you compose a home on one plan canvas and keep the related review and document work connected."],
-  ["Who is it for?", "Jodu is being made for civil engineers, draftspersons, and residential contractors working on G+1 and G+2 projects."],
-  ["Where is Jodu available?", "The desktop release is in preparation. An Android companion app is also in development. Platform status and download links are kept current on the Downloads page."],
-  ["Does Jodu replace existing CAD tools?", "No. Jodu is a focused surface for residential planning and downstream coordination. It is intended to work alongside the tools you already use."],
+const workflow = [
+  [
+    "01",
+    "Set out",
+    "Define the plot, road side, setbacks, and buildable envelope.",
+  ],
+  [
+    "02",
+    "Author",
+    "Place walls, typed rooms, openings, stairs, dimensions, materials, and finishes on one model.",
+  ],
+  [
+    "03",
+    "Review",
+    "Use the 3D view, House Overview, and Explore mode to inspect the same model.",
+  ],
+  [
+    "04",
+    "Issue",
+    "Prepare drawing sets, schedules, quantities, and a priced bill of quantities.",
+  ],
 ];
 
-const workflow = [
-  ["01", "Compose", "Lay out the rooms, levels, and circulation on one canvas."],
-  ["02", "Review", "Use the model view to discuss the spatial result."],
-  ["03", "Quantify", "Read the quantities and schedules that follow from the plan."],
-  ["04", "Issue", "Prepare a clear plan sheet for the next conversation."],
+const featureGroups = [
+  [
+    "Author the house",
+    "Plot and setback controls, typed rooms with live areas, doors, windows, stairs, dimensions, and precision tools including Offset, Trim, Extend, Mirror, Match-properties, and Array.",
+  ],
+  [
+    "Use regional materials",
+    "India-first wall and foundation profiles for laterite, rubble stone, concrete block, fly-ash brick, clay brick, and AAC, with material-aware quantities and take-off.",
+  ],
+  [
+    "Carry finishes through",
+    "Specify materials and use a finish cascade from project to room type, space, and surface so finishes remain part of the model and its deliverables.",
+  ],
+  [
+    "Read schedules and quantities",
+    "Live door, window, room, wall, stair, finish, envelope, and fixture schedules, plus take-off for masonry, concrete, steel, foundations, finishes, and openings.",
+  ],
+  [
+    "Price the work",
+    "An editable rate book, GST-inclusive costs, a material statement in bags and brass, and CSV export for estimating. Rates and assumptions remain visible and changeable.",
+  ],
+  [
+    "Prepare the drawing set",
+    "A3, A2, or A1 sheets containing plans, sections, elevations, schedules, and BoQ, exported as an IS-962-style PDF with a title block.",
+  ],
+  [
+    "Exchange and trace",
+    "Export layered DXF and DWG through the server converter. Existing DWG/DXF files can be used as a reference for user-confirmed wall tracing; they are not automatically converted into a model.",
+  ],
+  [
+    "Review in 3D",
+    "Massing and coordination views, including House Overview and Explore mode. The 3D view is for verification and exploration, not photorealistic rendering.",
+  ],
+];
+
+const faqs = [
+  [
+    "What is Jodu?",
+    "Jodu is a building modeller for the Indian house. It holds the plot, geometry, rooms, openings, stairs, finishes, envelope, and materials as one coordinated model. Plans, schedules, quantities, the priced bill of quantities, and the 3D view are views of that model.",
+  ],
+  [
+    "Who is it for?",
+    "Jodu is intended for Indian civil engineers, structural draftspersons, and technically-literate contractors working on G+1 and G+2 residential houses.",
+  ],
+  [
+    "Which surface should I use?",
+    "The browser app is the live account-based workspace. The desktop app is in preparation for the full workflow. The Android app is an offline-first field companion for briefs, site observations, photos, voice notes, location and orientation, and project review; it does not author the building model directly.",
+  ],
+  [
+    "What is outside the current scope?",
+    "Jodu does not provide black-box AI layout generation, structural calculations, MEP drawings, real-time multi-user collaboration, photorealistic rendering, or automatic conversion of an existing drawing into a model. The current scope is G+1 and G+2 rectilinear residential houses.",
+  ],
 ];
 
 export default function Home() {
@@ -32,8 +102,7 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (email.trim()) setSubmitted(true);
   };
@@ -46,14 +115,25 @@ export default function Home() {
           <span className="brand-word">jodu</span>
         </a>
         <nav className={`desktop-nav ${menuOpen ? "is-open" : ""}`}>
-          <a className="is-active" href="#product">Product</a>
+          <a className="is-active" href="#product">
+            Product
+          </a>
           <a href="#demo">Demo</a>
           <a href="#plans">Plans</a>
           <a href="/downloads">Downloads</a>
-          <a href="mailto:hello@jodulabs.com">Contact <MoveUpRight size={13} /></a>
+          <a href="mailto:hello@jodulabs.com">
+            Contact <MoveUpRight size={13} />
+          </a>
         </nav>
-        <a className="nav-cta" href="#pilot">Request access <ArrowRight size={14} /></a>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation" data-testid="mobile-menu-toggle">
+        <a className="nav-cta" href={appUrl} target="_blank" rel="noreferrer">
+          Open browser app <ArrowUpRight size={14} />
+        </a>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation"
+          data-testid="mobile-menu-toggle"
+        >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </header>
@@ -62,70 +142,265 @@ export default function Home() {
         <section className="product-hero" id="product">
           <div className="container product-hero-inner">
             <div className="product-hero-copy">
-              <p className="eyebrow"><span className="eyebrow-mark" /> JODU / RESIDENTIAL PLANNING</p>
-              <h1>Plan the house.<br /><em>Keep the work together.</em></h1>
-              <p className="product-hero-lede">Jodu is a focused planning tool for residential construction. Lay out the house, inspect the result, and carry the same model into quantities, schedules, and plan sheets.</p>
+              <p className="eyebrow">
+                <span className="eyebrow-mark" /> JODU / BUILDING MODELLER
+              </p>
+              <h1>
+                A building modeller for the <em>Indian house.</em>
+              </h1>
+              <p className="product-hero-lede">
+                Compose a G+1 or G+2 house as one coordinated model. From that
+                model, Jodu produces plans, schedules, quantities, a priced BoQ,
+                and the drawing set that follows.
+              </p>
               <div className="hero-actions">
-                <a className="button button-dark" href="#demo">See how it works <Play size={14} fill="currentColor" /></a>
-                <a className="text-link" href="#plans">Check access <span>↘</span></a>
+                <a
+                  className="button button-dark"
+                  href={appUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open browser app <ArrowUpRight size={14} />
+                </a>
+                <a className="text-link" href="#demo">
+                  Read the workflow <ArrowRight size={14} />
+                </a>
               </div>
             </div>
             <div className="product-hero-proof">
-              <div className="proof-head"><span>JODU / WORKSPACE</span><span>01</span></div>
-              <div className="product-canvas"><img src={assets.canvas} alt="Jodu plan canvas interface" /></div>
-              <p>The plan is the source. The views follow.</p>
+              <div className="proof-head">
+                <span>JODU / PLAN CANVAS</span>
+                <span>01</span>
+              </div>
+              <div className="product-canvas">
+                <img src={assets.canvas} alt="Jodu plan canvas interface" />
+              </div>
+              <p>Plot, rooms, openings, stairs, and dimensions on one model.</p>
             </div>
           </div>
-          <div className="container hero-rule"><span>DESKTOP / FIRST RELEASE SURFACE</span><span>ANDROID / COMPANION IN DEVELOPMENT</span></div>
+          <div className="container hero-rule">
+            <span>BROWSER APP / SAAS / LIVE</span>
+            <span>DESKTOP / IN PREPARATION</span>
+            <span>ANDROID / INTERNAL TESTING</span>
+          </div>
         </section>
 
         <section className="definition-section section" id="demo">
           <div className="container definition-grid">
-            <div><p className="eyebrow">What Jodu does</p><h2>Compose once.<br /><em>Carry it forward.</em></h2></div>
+            <div>
+              <p className="eyebrow">Product definition</p>
+              <h2>
+                One model.
+                <br />
+                <em>Every deliverable, in step.</em>
+              </h2>
+            </div>
             <div className="definition-copy">
-              <p>Jodu gives residential planning work a single place to begin. Compose the house, review the spatial result, and keep the information needed for the next document close to the plan.</p>
-              <p>It is not a promise to replace every tool around the work. It is a more focused surface for the part where the house takes shape.</p>
-              <a className="button button-outline" href="#workflow" data-testid="demo-cta">Walk through the workflow <ArrowRight size={15} /></a>
+              <p>
+                Jodu is a building modeller for Indian G+1 and G+2 residential
+                houses. The plot, walls, rooms, openings, stairs, finishes,
+                envelope, and materials stay together in one coordinated model.
+              </p>
+              <p>
+                Plans, schedules, quantities, the priced bill of quantities, and
+                the 3D view are views of that model. Change the model and review
+                the related outputs from the same source.
+              </p>
+              <a
+                className="button button-outline"
+                href={appUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open the live workspace <ArrowUpRight size={15} />
+              </a>
             </div>
           </div>
         </section>
 
         <section className="video-section section">
           <div className="container">
-            <div className="section-topline"><p className="eyebrow">Product demo</p><span className="section-note">A clean look at the current build</span></div>
+            <div className="section-topline">
+              <p className="eyebrow">Current product surface</p>
+              <span className="section-note">
+                Recorded walkthrough not available
+              </span>
+            </div>
             <div className="video-demo-grid">
-              <div className="video-frame"><div className="video-poster"><img src={assets.preview} alt="Jodu 3D preview interface used as the demo poster" /><div className="video-scrim" /><button className="demo-play" aria-label="Product demo video placeholder" disabled data-testid="demo-video-play"><Play size={18} fill="currentColor" /></button><span className="video-status">VIDEO SOURCE / TO BE CONNECTED</span></div></div>
-              <div className="video-copy"><span className="feature-number">01</span><h2>See the product before you read about it.</h2><p>A short walkthrough of the Jodu workspace will live here: compose the house, move through the review views, and see what leaves the canvas.</p><span className="video-note">The demo video will be added when the final recording is ready.</span></div>
+              <div className="video-frame">
+                <div className="video-poster">
+                  <img src={assets.preview} alt="Jodu 3D verification view" />
+                  <div className="video-scrim" />
+                  <span className="video-status">3D / VERIFICATION VIEW</span>
+                </div>
+              </div>
+              <div className="video-copy">
+                <span className="feature-number">01</span>
+                <h2>The current build, shown in product views.</h2>
+                <p>
+                  A recorded walkthrough will be added when it is ready. For
+                  now, the screenshots on this page show the plan canvas, 3D
+                  review, quantities, schedules, and drawing output.
+                </p>
+                <span className="video-note">
+                  The 3D view supports massing and coordination; it is not a
+                  photorealistic renderer.
+                </span>
+              </div>
             </div>
           </div>
         </section>
 
         <section className="workflow-section section" id="workflow">
           <div className="container">
-            <div className="section-topline"><p className="eyebrow">The workflow</p><span className="section-note">One model / multiple views</span></div>
-            <div className="workflow-list">{workflow.map(([number, title, description]) => <div className="workflow-item" key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p><ArrowRight size={17} /></div>)}</div>
+            <div className="section-topline">
+              <p className="eyebrow">Workflow</p>
+              <span className="section-note">One model / multiple views</span>
+            </div>
+            <div className="workflow-list">
+              {workflow.map(([number, title, description]) => (
+                <div className="workflow-item" key={number}>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <ArrowRight size={17} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="feature-reference-section section">
+          <div className="container">
+            <div className="section-topline">
+              <p className="eyebrow">Feature reference</p>
+              <span className="section-note">
+                Implemented product capabilities
+              </span>
+            </div>
+            <div className="feature-reference-intro">
+              <h2>
+                What the current product
+                <br />
+                <em>can produce.</em>
+              </h2>
+              <p>
+                These are the working capabilities behind the reference 30 × 40
+                ft G+1 project shown in the product images.
+              </p>
+            </div>
+            <div className="feature-list">
+              {featureGroups.map(([title, description]) => (
+                <div className="feature-row" key={title}>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="outputs-section section">
           <div className="container">
-            <div className="section-topline"><p className="eyebrow">Product views</p><span className="section-note">Examples from the current build</span></div>
-            <div className="output-strip">
-              <article><div className="sheet-head"><span>02 / QUANTITIES</span><span>JODU / OUTPUT</span></div><img src={assets.quantities} alt="Jodu quantities view" /><span>Quantities</span><small>Read quantities from the current plan.</small></article>
-              <article><div className="sheet-head"><span>03 / SCHEDULES</span><span>JODU / OUTPUT</span></div><img src={assets.schedules} alt="Jodu schedules view" /><span>Schedules</span><small>Keep the schedule view near the model.</small></article>
-              <article><div className="sheet-head"><span>04 / PLAN SHEET</span><span>JODU / OUTPUT</span></div><img src={assets.sheet} alt="Jodu plan sheet" /><span>Plan sheet</span><small>Prepare a sheet for the next review.</small></article>
+            <div className="section-topline">
+              <p className="eyebrow">Product views</p>
+              <span className="section-note">
+                Screenshots and real product output
+              </span>
             </div>
-            <div className="outputs-footer"><p>These views stay close to the plan instead of becoming separate pieces of work.</p><a className="text-link" href="/downloads">See release status <span>↗</span></a></div>
+            <div className="output-strip">
+              <article>
+                <div className="sheet-head"><span>02 / QUANTITIES</span><span>JODU / OUTPUT</span></div>
+                <img
+                  src={assets.quantities}
+                  alt="Jodu quantities and BoQ view"
+                />
+                <span>Quantities / priced BoQ</span>
+                <small>Read quantities from the current model.</small>
+              </article>
+              <article>
+                <div className="sheet-head"><span>03 / SCHEDULES</span><span>JODU / OUTPUT</span></div>
+                <img src={assets.schedules} alt="Jodu schedules view" />
+                <span>Schedules</span>
+                <small>Keep the schedule view near the model.</small>
+              </article>
+              <article>
+                <div className="sheet-head"><span>04 / DRAWING SET</span><span>JODU / OUTPUT</span></div>
+                <img src={assets.sheet} alt="Jodu IS-962-style drawing sheet" />
+                <span>Drawing set sheet</span>
+                <small>Prepare a sheet for the next review.</small>
+              </article>
+            </div>
+            <div className="outputs-footer">
+              <p>
+                The plan sheet shown here is real product output from the
+                canonical 30 × 40 ft G+1 model, rendered by Jodu’s own exporter.
+              </p>
+              <a className="text-link" href="/downloads">
+                See platform status <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
         </section>
 
         <section className="platform-section section">
           <div className="container platform-section-grid">
-            <div><p className="eyebrow">Platforms</p><h2>Start on the desktop.<br /><em>Carry the work further.</em></h2></div>
+            <div>
+              <p className="eyebrow">Platforms</p>
+              <h2>
+                Three surfaces.
+                <br />
+                <em>Different roles.</em>
+              </h2>
+              <p className="platform-intro">
+                The browser app, desktop app, and Android companion are not
+                feature-equivalent versions of the same client.
+              </p>
+            </div>
             <div className="platform-summary">
-              <div><span className="platform-state">DESKTOP / RELEASING SOON</span><h3>Jodu desktop</h3><p>The full planning workspace is being prepared for release.</p></div>
-              <div><span className="platform-state">ANDROID / IN DEVELOPMENT</span><h3>Jodu mobile</h3><p>A companion app for reviewing project information away from the desk.</p></div>
-              <a className="button button-outline" href="/downloads">Open downloads <ArrowRight size={15} /></a>
+              <div>
+                <span className="platform-state">
+                  BROWSER APP / SAAS / LIVE
+                </span>
+                <h3>Jodu in the browser</h3>
+                <p>
+                  The current account-based workspace for authoring and
+                  reviewing building projects, from the model through the
+                  drawing set and priced BoQ.
+                </p>
+                <a
+                  className="text-link platform-inline-link"
+                  href={appUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open app <ArrowUpRight size={14} />
+                </a>
+              </div>
+              <div>
+                <span className="platform-state">DESKTOP / IN PREPARATION</span>
+                <h3>Jodu desktop</h3>
+                <p>
+                  The desktop app is being prepared as a packaged workspace for
+                  the full authoring and document workflow. No public installer
+                  is available yet.
+                </p>
+              </div>
+              <div>
+                <span className="platform-state">
+                  ANDROID / INTERNAL TESTING
+                </span>
+                <h3>Jodu field companion</h3>
+                <p>
+                  An offline-first companion for site visits, briefs,
+                  measurements, photos, voice notes, location and orientation,
+                  and 3D project review. It records information for later
+                  review; it does not author the building model directly.
+                </p>
+              </div>
+              <a className="button button-outline" href="/downloads">
+                View platform details <ArrowRight size={15} />
+              </a>
             </div>
           </div>
         </section>
@@ -133,10 +408,10 @@ export default function Home() {
         <section className="plans-section section" id="plans">
           <div className="container">
             <div className="section-topline"><p className="eyebrow">Access / plans</p><span className="section-note">Terms are still being worked out</span></div>
-            <div className="plans-intro"><div><h2>Start with the work.<br /><em>Choose the right access.</em></h2></div><p>We are not publishing final subscription prices yet. This is the honest shape of the product today: a pilot first, with self-serve plans to define once the workflow is ready.</p></div>
+            <div className="plans-intro"><div><h2>Start with the work.<br /><em>Choose the right access.</em></h2></div><p>We are not publishing final subscription prices yet. This is the honest shape of access today: a pilot first, with self-serve plans to define once the browser workspace is ready for broader use.</p></div>
             <div className="plans-grid">
               <article className="plan-card plan-card-featured"><div className="plan-card-top"><span className="plan-status">AVAILABLE NOW</span><span className="plan-index">01</span></div><h3>Pilot</h3><p className="plan-audience">For a real residential project.</p><p>Work through a current project with the team, test the fit, and tell us what the product needs to do next.</p><a className="button button-dark" href="#pilot">Request pilot access <ArrowRight size={15} /></a></article>
-              <article className="plan-card"><div className="plan-card-top"><span className="plan-status plan-status-muted">PLANNED</span><span className="plan-index">02</span></div><h3>Individual</h3><p className="plan-audience">For one practitioner.</p><p>A future self-serve plan for people who want to work through projects independently. Price and limits will follow the first release.</p><span className="plan-note">Pricing to be announced</span></article>
+              <article className="plan-card"><div className="plan-card-top"><span className="plan-status plan-status-muted">PLANNED</span><span className="plan-index">02</span></div><h3>Individual</h3><p className="plan-audience">For one practitioner.</p><p>A future self-serve plan for people who want to work through projects independently. Price and limits will follow the release.</p><span className="plan-note">Pricing to be announced</span></article>
               <article className="plan-card"><div className="plan-card-top"><span className="plan-status plan-status-muted">PLANNED</span><span className="plan-index">03</span></div><h3>Team</h3><p className="plan-audience">For a studio or site team.</p><p>A future plan for shared project work across the people who review, quantify, and issue the set.</p><span className="plan-note">Pricing to be announced</span></article>
             </div>
           </div>
@@ -144,20 +419,102 @@ export default function Home() {
 
         <section className="faq-section section" id="faq">
           <div className="container faq-grid">
-            <div><p className="eyebrow">Questions</p><h2>The useful version.</h2></div>
-            <div className="faq-list">{faqs.map(([question, answer], index) => <div className={`faq-item ${openFaq === index ? "is-open" : ""}`} key={question}><button onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index} data-testid={`faq-trigger-${index}`}><span>{question}</span><ChevronDown size={17} /></button>{openFaq === index && <p>{answer}</p>}</div>)}</div>
+            <div>
+              <p className="eyebrow">Questions</p>
+              <h2>Product notes.</h2>
+            </div>
+            <div className="faq-list">
+              {faqs.map(([question, answer], index) => (
+                <div
+                  className={`faq-item ${openFaq === index ? "is-open" : ""}`}
+                  key={question}
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                    data-testid={`faq-trigger-${index}`}
+                  >
+                    <span>{question}</span>
+                    <ChevronDown size={17} />
+                  </button>
+                  {openFaq === index && <p>{answer}</p>}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="pilot-section section" id="pilot">
           <div className="container pilot-inner">
-            <div><p className="eyebrow">Early access</p><h2>Bring a real project.<br /><em>See if Jodu fits.</em></h2></div>
-            <div><p>We are opening access for people working on residential plans. No claims, no noise — just a chance to use the product and tell us what is missing.</p>{submitted ? <div className="success-state"><Check size={17} /> Request received for <strong>{email}</strong>.</div> : <form className="waitlist-form" onSubmit={submit}><label className="sr-only" htmlFor="email">Work email</label><input id="email" type="email" placeholder="Your work email" value={email} onChange={(event) => setEmail(event.target.value)} required data-testid="waitlist-email" /><button className="button button-dark" type="submit" data-testid="waitlist-submit">Request access <ArrowRight size={15} /></button></form>}</div>
+            <div>
+              <p className="eyebrow">Access</p>
+              <h2>
+                Request access to
+                <br />
+                <em>the current workspace.</em>
+              </h2>
+            </div>
+            <div>
+              <p>
+                If you work on Indian G+1 or G+2 residential houses, use the
+                form to ask about access to the current Jodu workspace. We will
+                reply with the availability and next steps.
+              </p>
+              {submitted ? (
+                <div className="success-state">
+                  <Check size={17} /> Request received for{" "}
+                  <strong>{email}</strong>.
+                </div>
+              ) : (
+                <form className="waitlist-form" onSubmit={submit}>
+                  <label className="sr-only" htmlFor="email">
+                    Work email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Your work email"
+                    value={email}
+                    onChange={event => setEmail(event.target.value)}
+                    required
+                    data-testid="waitlist-email"
+                  />
+                  <button
+                    className="button button-dark"
+                    type="submit"
+                    data-testid="waitlist-submit"
+                  >
+                    Request access <ArrowRight size={15} />
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer"><div className="container footer-grid"><div><a className="brand" href="#top"><span className="brand-mark" aria-hidden="true">{architecturalMark}</span><span className="brand-word">jodu</span></a><p>Residential planning, made coherent.</p></div><div className="footer-links"><a href="#product">Product</a><a href="#demo">Demo</a><a href="#plans">Plans</a><a href="/downloads">Downloads</a><a href="mailto:hello@jodulabs.com">Email us</a></div><div className="footer-meta"><span>Jodu Labs / India</span><span>© 2026</span></div></div></footer>
+      <footer className="site-footer">
+        <div className="container footer-grid">
+          <div>
+            <a className="brand" href="#top">
+              <span className="brand-mark" aria-hidden="true">{architecturalMark}</span>
+              <span className="brand-word">jodu</span>
+            </a>
+            <p>A building modeller for the Indian house.</p>
+          </div>
+          <div className="footer-links">
+            <a href="#product">Product</a>
+            <a href="#demo">Demo</a>
+            <a href="#plans">Plans</a>
+            <a href="/downloads">Downloads</a>
+            <a href="mailto:hello@jodulabs.com">Email us</a>
+          </div>
+          <div className="footer-meta">
+            <span>Jodu Labs / India</span>
+            <span>© 2026</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
