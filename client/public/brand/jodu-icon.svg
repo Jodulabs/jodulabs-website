@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 100 100">
+  <!-- The Jodu mark, and the only hand-edited brand artwork in this repository.
+       Two houses sharing one stroke, crossed as a lemniscate: the pair the
+       name means, and the endless loop between a building and its model.
+
+       Every application icon, favicon and in-app logo is generated from this
+       file by scripts/generate_brand_assets.sh — edit here and regenerate,
+       never edit a generated asset.
+
+       The mark always travels on its tile; it is not a transparent glyph. -->
+  <rect width="100" height="100" rx="22" fill="#041e25"/>
+  <path fill="none" stroke="#74c1a9" stroke-width="7.7"
+        stroke-linejoin="round" stroke-linecap="round"
+        d="M28.3 34.63 L14.65 43.95 L14.65 62.7 L35.58 62.7
+           L71.7 34.63 L85.35 43.95 L85.35 62.7 L64.42 62.7 Z"/>
+</svg>
