@@ -7,18 +7,16 @@ import {
   Smartphone,
   Globe2,
 } from "lucide-react";
+import JoduMark from "../components/brand/JoduMark";
 
 const appUrl = "https://app.jodulabs.com/";
-const architecturalMark = <><span className="mark-frame mark-frame-a" /><span className="mark-frame mark-frame-b" /></>;
 
 export default function Downloads() {
   return (
     <div className="utility-page">
       <header className="site-nav" data-testid="downloads-navigation">
         <a className="brand" href="/" aria-label="Jodu home">
-          <span className="brand-mark" aria-hidden="true">
-            {architecturalMark}
-          </span>
+          <JoduMark />
           <span className="brand-word">jodu</span>
         </a>
         <nav className="desktop-nav">
@@ -222,9 +220,7 @@ export default function Downloads() {
         <div className="container footer-grid">
           <div>
             <a className="brand" href="/">
-              <span className="brand-mark" aria-hidden="true">
-                {architecturalMark}
-              </span>
+              <JoduMark />
               <span className="brand-word">jodu</span>
             </a>
             <p>A building modeller for the Indian house.</p>

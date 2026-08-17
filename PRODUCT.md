@@ -286,9 +286,12 @@ absolute paths:
 The two plan images are the *exact PDF a user exports*, rasterised. That is a
 strong, honest proof point — say so.
 
-Brand mark: `/jodulabs-infinite-mark.png` (the approved "Infinite Dwellings"
-two-house infinity mark). It is the primary brand signal and is used with
-restraint; see `icon-reference-notes.md`.
+Brand mark: `/brand/jodu-icon.svg` — a verbatim copy of the product's own
+`kalakar/assets/brand/jodu-icon.svg`, the single hand-edited brand file every
+app icon and favicon is generated from. Two houses sharing one stroke, crossed
+as a lemniscate, on a dark teal tile. The mark always travels on its tile; it is
+not a transparent glyph, and it is never redrawn for the site. It is the primary
+brand signal and is used with restraint; see `icon-reference-notes.md`.
 
 There is **no product demo video** yet. The Home page reserves a slot for one.
 Do not fabricate a video embed or imply a walkthrough exists.

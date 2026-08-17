@@ -9,6 +9,7 @@ import {
   MoveUpRight,
   X,
 } from "lucide-react";
+import JoduMark from "../components/brand/JoduMark";
 
 const appUrl = "https://app.jodulabs.com/";
 const assets = {
@@ -18,7 +19,6 @@ const assets = {
   schedules: "/product/ui-schedules.png",
   sheet: "/product/plan-sheet-30x40-g1-1.png",
 };
-const architecturalMark = <><span className="mark-frame mark-frame-a" /><span className="mark-frame mark-frame-b" /></>;
 
 const workflow = [
   [
@@ -111,7 +111,7 @@ export default function Home() {
     <div className="site-shell">
       <header className="site-nav" data-testid="site-navigation">
         <a className="brand" href="#top" aria-label="Jodu home">
-          <span className="brand-mark" aria-hidden="true">{architecturalMark}</span>
+          <JoduMark />
           <span className="brand-word">jodu</span>
         </a>
         <nav className={`desktop-nav ${menuOpen ? "is-open" : ""}`}>
@@ -497,7 +497,7 @@ export default function Home() {
         <div className="container footer-grid">
           <div>
             <a className="brand" href="#top">
-              <span className="brand-mark" aria-hidden="true">{architecturalMark}</span>
+              <JoduMark />
               <span className="brand-word">jodu</span>
             </a>
             <p>A building modeller for the Indian house.</p>
