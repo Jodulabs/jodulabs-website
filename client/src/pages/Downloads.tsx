@@ -223,7 +223,7 @@ export default function Downloads() {
               <JoduMark />
               <span className="brand-word">jodu</span>
             </a>
-            <p>A building modeller for the Indian house.</p>
+            <p>A building modeller for homes from plan to build.</p>
           </div>
           <div className="footer-links">
             <a href="/">Product</a>

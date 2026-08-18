@@ -81,11 +81,11 @@ const featureGroups = [
 const faqs = [
   [
     "What is Jodu?",
-    "Jodu is a building modeller for the Indian house. It holds the plot, geometry, rooms, openings, stairs, finishes, envelope, and materials as one coordinated model. Plans, schedules, quantities, the priced bill of quantities, and the 3D view are views of that model.",
+    "Jodu is a building modeller for homes from plan to build. It holds the plot, geometry, rooms, openings, stairs, finishes, envelope, and materials as one coordinated model. Plans, schedules, quantities, the priced bill of quantities, and the 3D view are views of that model.",
   ],
   [
     "Who is it for?",
-    "Jodu is intended for Indian civil engineers, structural draftspersons, and technically-literate contractors working on G+1 and G+2 residential houses.",
+    "Jodu is intended for civil engineers, structural draftspersons, and technically-literate contractors working on G+1 and G+2 residential houses.",
   ],
   [
     "Which surface should I use?",
@@ -146,7 +146,7 @@ export default function Home() {
                 <span className="eyebrow-mark" /> JODU / BUILDING MODELLER
               </p>
               <h1>
-                A building modeller for the <em>Indian house.</em>
+                A building modeller for <em>homes from plan to build.</em>
               </h1>
               <p className="product-hero-lede">
                 Compose a G+1 or G+2 house as one coordinated model. From that
@@ -197,8 +197,8 @@ export default function Home() {
             </div>
             <div className="definition-copy">
               <p>
-                Jodu is a building modeller for Indian G+1 and G+2 residential
-                houses. The plot, walls, rooms, openings, stairs, finishes,
+                Jodu is a building modeller for homes from plan to build, with support for
+                G+1 and G+2 residential projects. The plot, walls, rooms, openings, stairs, finishes,
                 envelope, and materials stay together in one coordinated model.
               </p>
               <p>
@@ -456,7 +456,7 @@ export default function Home() {
             </div>
             <div>
               <p>
-                If you work on Indian G+1 or G+2 residential houses, use the
+                If you work on G+1 or G+2 residential projects, use the
                 form to ask about access to the current Jodu workspace. We will
                 reply with the availability and next steps.
               </p>
@@ -500,7 +500,7 @@ export default function Home() {
               <JoduMark />
               <span className="brand-word">jodu</span>
             </a>
-            <p>A building modeller for the Indian house.</p>
+            <p>A building modeller for homes from plan to build.</p>
           </div>
           <div className="footer-links">
             <a href="#product">Product</a>
