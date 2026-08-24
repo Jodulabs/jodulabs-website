@@ -94,3 +94,7 @@ Plans are intentionally provisional. The homepage may show the shape of access �
 Jodu, not Jodulabs, is the platform name. A dedicated, low-key notation field may show the name in Kannada, English, Tamil, Telugu, Urdu, and Hindi as a brand layer. It is not a pronunciation guide, a language selector, or a claim that the product has been localised into those languages. The scripts should carry the feel of a drawing-set notation sheet: ordered, quiet, and legible.
 
 Contextual imagery should show the material reality of Indian residential work — a house under construction, masonry, concrete, reinforcement, and site geometry. It functions as a faded documentary underlay and must not be confused with Jodu product output, a customer project, or a polished real-estate image. Treat it with the same restrained palette as the rest of the editorial system: softened, low-saturation, and framed by measured annotation details.
+
+## Style Decisions — Local-Script Logo Lock-Up
+
+This decision supersedes the proposed standalone notation field. The multilingual treatment belongs inside the hero as a background cue: the canonical Jodu mark sits above a single local-script wordmark, which changes slowly between selected scripts. The lock-up never has language labels, borders, cards, or explanatory copy. It should read like a light site stamp caught in the construction texture — visible enough to notice, quiet enough to leave the product proof in charge.

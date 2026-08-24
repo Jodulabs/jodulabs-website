@@ -1940,3 +1940,161 @@ h3 em {
     transform: none;
   }
 }
+
+/* Design philosophy: The ambient lock-up uses the canonical mark and a quietly changing local-script wordmark to make Jodu feel rooted in the work, not translated into a separate feature. */
+.product-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.product-hero-inner,
+.product-hero .hero-rule {
+  position: relative;
+  z-index: 2;
+}
+.hero-construction-texture {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(51vw, 760px);
+  overflow: hidden;
+  opacity: 0.17;
+  pointer-events: none;
+}
+.hero-construction-texture::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--paper) 0%, rgba(243, 244, 242, 0.93) 18%, rgba(243, 244, 242, 0.34) 69%, rgba(243, 244, 242, 0.64) 100%);
+  content: "";
+}
+.hero-construction-texture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(1) contrast(0.9) sepia(0.14);
+}
+.hero-local-lockup {
+  position: absolute;
+  z-index: 1;
+  top: 121px;
+  right: max(2.5rem, calc((100vw - 1280px) / 2));
+  display: grid;
+  justify-items: center;
+  width: 132px;
+  opacity: 0.94;
+  pointer-events: none;
+  transform: rotate(-4deg);
+}
+.hero-local-lockup-mark {
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 8px 11px rgba(32, 39, 42, 0.08));
+}
+.hero-local-script-stack {
+  position: relative;
+  width: 132px;
+  height: 47px;
+  margin-top: 9px;
+}
+.hero-local-script {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 1;
+  animation: none;
+}
+.hero-local-script-kn { font-family: "Noto Sans Kannada", sans-serif; animation-delay: 0s; }
+.hero-local-script-en { font-family: "Source Serif 4", serif; font-size: 31px; animation-delay: 5s; }
+.hero-local-script-ta { font-family: "Noto Sans Tamil", sans-serif; animation-delay: 10s; }
+.hero-local-script-te { font-family: "Noto Sans Telugu", sans-serif; animation-delay: 15s; }
+.hero-local-script-ur { font-family: "Noto Nastaliq Urdu", serif; font-size: 25px; line-height: 1.25; animation-delay: 20s; }
+.hero-local-script-hi { font-family: "Noto Sans Devanagari", sans-serif; animation-delay: 25s; }
+.hero-local-lockup-rule {
+  width: 27px;
+  height: 2px;
+  margin-top: 7px;
+  background: var(--clay);
+}
+@keyframes local-script-cycle {
+  0%, 17% { opacity: 1; transform: translateY(0); }
+  20%, 100% { opacity: 0; transform: translateY(-6px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-local-lockup {
+    animation: local-lockup-drift 13s var(--ease) infinite alternate;
+  }
+}
+@keyframes local-lockup-drift {
+  from { transform: translate3d(0, 0, 0) rotate(-4deg); }
+  to { transform: translate3d(-9px, 13px, 0) rotate(-2deg); }
+}
+@media (max-width: 900px) {
+  .hero-construction-texture {
+    width: 70vw;
+    opacity: 0.12;
+  }
+  .hero-local-lockup {
+    top: 110px;
+    right: 28px;
+    width: 100px;
+    opacity: 0.72;
+  }
+  .hero-local-lockup-mark {
+    width: 45px;
+    height: 45px;
+  }
+  .hero-local-script-stack {
+    width: 100px;
+    height: 39px;
+  }
+  .hero-local-script {
+    font-size: 23px;
+  }
+  .hero-local-script-en {
+    font-size: 26px;
+  }
+  .hero-local-script-ur {
+    font-size: 21px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-construction-texture {
+    inset: 0 0 auto;
+    width: 100%;
+    height: 310px;
+    opacity: 0.1;
+  }
+  .hero-construction-texture::after {
+    background: linear-gradient(180deg, rgba(243, 244, 242, 0.28), var(--paper) 94%);
+  }
+  .hero-local-lockup {
+    top: 104px;
+    right: 18px;
+    opacity: 0.45;
+    transform: rotate(-4deg) scale(0.82);
+  }
+  .hero-local-script {
+    animation: none;
+  }
+  .hero-local-script:not(.hero-local-script-kn) {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-local-lockup,
+  .hero-local-script {
+    animation: none;
+  }
+  .hero-local-script:not(.hero-local-script-kn) {
+    display: none;
+  }
+  .hero-local-script-kn {
+    opacity: 1;
+  }
+}

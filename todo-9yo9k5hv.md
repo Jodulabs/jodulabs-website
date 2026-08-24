@@ -4,3 +4,16 @@
 - [x] Source and add editorial Indian residential construction imagery as non-product contextual underlay.
 - [x] Implement the identity treatment with accessible language metadata, reduced-motion support, and mobile behavior.
 - [x] Validate the homepage composition, build, and responsive presentation before checkpointing.
+
+# Ambient identity-layer revision
+
+- [x] Remove the structured multilingual translation-board presentation.
+- [x] Integrate Jodu scripts as quiet floating background notation in the hero composition.
+- [x] Reframe Indian residential construction imagery as low-contrast contextual texture rather than a contained feature section.
+- [ ] Validate the revised motion system and responsive visual hierarchy before checkpointing.
+
+# Local-script logo lock-up revision
+
+- [x] Replace the floating-script direction with a single Jodu mark and one local-script wordmark directly beneath it.
+- [x] Place the lock-up as a subtle, animated background motif inside the residential construction context.
+- [x] Validate that the lock-up remains a brand cue rather than a language board on desktop and mobile.
