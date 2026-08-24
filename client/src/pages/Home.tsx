@@ -170,16 +170,6 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="product-hero-proof">
-              <div className="proof-head">
-                <span>JODU / PLAN CANVAS</span>
-                <span>01</span>
-              </div>
-              <div className="product-canvas">
-                <img src={assets.canvas} alt="Jodu plan canvas interface" />
-              </div>
-              <p>Plot, rooms, openings, stairs, and dimensions on one model.</p>
-            </div>
           </div>
           <div className="container hero-rule">
             <span>BROWSER APP / SAAS / LIVE</span>
