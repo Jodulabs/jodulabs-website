@@ -1,4 +1,5 @@
 /* Design philosophy: Sober Product Site — explain the current product surface, show real outputs, and use platform status as information rather than persuasion. */
+/** Design philosophy: Jodu is the product name and platform; cultural cues should be quiet, contextual, and never mistaken for a localisation claim. */
 import { useState } from "react";
 import {
   ArrowRight,
@@ -19,6 +20,15 @@ const assets = {
   schedules: "/product/ui-schedules.png",
   sheet: "/product/plan-sheet-30x40-g1-1.png",
 };
+
+const platformScripts = [
+  { language: "Kannada", code: "KN", lang: "kn", name: "ಜೋಡು" },
+  { language: "English", code: "EN", lang: "en", name: "jodu" },
+  { language: "Tamil", code: "TA", lang: "ta", name: "ஜோடு" },
+  { language: "Telugu", code: "TE", lang: "te", name: "జోడు" },
+  { language: "Urdu", code: "UR", lang: "ur", name: "جوڈو", direction: "rtl" },
+  { language: "Hindi", code: "HI", lang: "hi", name: "जोडु" },
+];
 
 const workflow = [
   [
@@ -182,6 +192,57 @@ export default function Home() {
             <span>BROWSER APP / SAAS / LIVE</span>
             <span>DESKTOP / IN PREPARATION</span>
             <span>ANDROID / INTERNAL TESTING</span>
+          </div>
+        </section>
+
+        <section className="platform-notation-section" aria-labelledby="platform-notation-heading">
+          <div className="platform-notation-underlay" aria-hidden="true">
+            <img
+              src="/manus-storage/jodu-residential-construction-underlay_d9fda240.jpg"
+              alt=""
+            />
+          </div>
+          <div className="container platform-notation-grid">
+            <div className="platform-notation-copy">
+              <p className="eyebrow">
+                <span className="eyebrow-mark" /> JODU / PLATFORM
+              </p>
+              <h2 id="platform-notation-heading">
+                Jodu is the platform.
+                <br />
+                <em>The house is the context.</em>
+              </h2>
+              <p>
+                Built for the details that sit between a plot, a drawing, and a
+                house in progress. The name stays close to the scripts that frame
+                the work around it.
+              </p>
+              <span className="platform-notation-caption">
+                Indian residential work / field context
+              </span>
+            </div>
+            <div className="platform-notation-side">
+              <div
+                className="script-array"
+                aria-label="Jodu written in Kannada, English, Tamil, Telugu, Urdu, and Hindi"
+              >
+                {platformScripts.map(({ language, code, lang, name, direction }) => (
+                  <div className="script-entry" key={code}>
+                    <span>{language}</span>
+                    <strong lang={lang} dir={direction}>{name}</strong>
+                    <small>{code}</small>
+                  </div>
+                ))}
+              </div>
+              <figure className="material-study" aria-hidden="true">
+                <img
+                  src="/manus-storage/jodu-masonry-material-study_02bd084a.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+                <figcaption>01 / material study</figcaption>
+              </figure>
+            </div>
           </div>
         </section>
 

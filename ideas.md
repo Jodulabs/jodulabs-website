@@ -88,3 +88,9 @@ Jodu Clay is used as a redline annotation system: section squares, status marks,
 Every major product visual is presented as a labeled drawing-set sheet with a concrete caption for the output shown: canvas, quantities, schedules, or plan sheet. The site uses authentic product captures only.
 
 Plans are intentionally provisional. The homepage may show the shape of access — Pilot, Individual, and Team — but must clearly label unreleased plans and avoid invented prices, limits, or availability. The website stays product-first; “About us” and investor-facing company sections are not part of the default information architecture unless there is real material to add.
+
+## Style Decisions — Platform Notation and Field Context
+
+Jodu, not Jodulabs, is the platform name. A dedicated, low-key notation field may show the name in Kannada, English, Tamil, Telugu, Urdu, and Hindi as a brand layer. It is not a pronunciation guide, a language selector, or a claim that the product has been localised into those languages. The scripts should carry the feel of a drawing-set notation sheet: ordered, quiet, and legible.
+
+Contextual imagery should show the material reality of Indian residential work — a house under construction, masonry, concrete, reinforcement, and site geometry. It functions as a faded documentary underlay and must not be confused with Jodu product output, a customer project, or a polished real-estate image. Treat it with the same restrained palette as the rest of the editorial system: softened, low-saturation, and framed by measured annotation details.
