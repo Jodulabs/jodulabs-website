@@ -114,3 +114,7 @@ The final atmosphere should not become a visual collage. It uses three muted pla
 ### Interaction refinement
 
 On desktop pointer devices, the atlas responds with a small perspective shift. This is the primary moment of dimensionality: it rewards exploration without adding a feature control, does not move copy or product proof, and is disabled for coarse pointers and reduced-motion preferences.
+
+### Three.js scene refinement
+
+The live scene is an original construction atlas, not a static backdrop. The finished home, build-stage home, and working plan sit on independent planes and drift at different rates. Jodu appears in Kannada, English, Tamil, Telugu, Urdu, and Hindi as partially cropped, low-opacity field traces rather than standalone labels. The animation should be discoverable over several seconds, never demand attention, and leave the hero copy and product proof fully legible.

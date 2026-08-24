@@ -10,6 +10,7 @@ import {
   MoveUpRight,
   X,
 } from "lucide-react";
+import AmbientResidentialScene from "../components/AmbientResidentialScene";
 import JoduMark from "../components/brand/JoduMark";
 
 const appUrl = "https://app.jodulabs.com/";
@@ -20,15 +21,6 @@ const assets = {
   schedules: "/product/ui-schedules.png",
   sheet: "/product/plan-sheet-30x40-g1-1.png",
 };
-
-const atlasWordmarks = [
-  { className: "atlas-wordmark-kn", lang: "kn", name: "ಜೋಡು" },
-  { className: "atlas-wordmark-en", lang: "en", name: "jodu" },
-  { className: "atlas-wordmark-ta", lang: "ta", name: "ஜோடு" },
-  { className: "atlas-wordmark-te", lang: "te", name: "జోడు" },
-  { className: "atlas-wordmark-ur", lang: "ur", name: "جوڈو", direction: "rtl" },
-  { className: "atlas-wordmark-hi", lang: "hi", name: "जोडु" },
-];
 
 const workflow = [
   [
@@ -112,18 +104,6 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const updateAtlasPerspective = (event: React.PointerEvent<HTMLElement>) => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 1.35;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * -0.9;
-    event.currentTarget.style.setProperty("--atlas-x", `${x.toFixed(2)}deg`);
-    event.currentTarget.style.setProperty("--atlas-y", `${y.toFixed(2)}deg`);
-  };
-  const resetAtlasPerspective = (event: React.PointerEvent<HTMLElement>) => {
-    event.currentTarget.style.setProperty("--atlas-x", "0deg");
-    event.currentTarget.style.setProperty("--atlas-y", "0deg");
-  };
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (email.trim()) setSubmitted(true);
@@ -161,30 +141,8 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section
-          className="product-hero"
-          id="product"
-          onPointerLeave={resetAtlasPerspective}
-          onPointerMove={updateAtlasPerspective}
-        >
-          <div className="technical-atlas" aria-hidden="true">
-            <div className="atlas-grid" />
-            <figure className="atlas-plane atlas-plane-home">
-              <img src="/manus-storage/jodu-finished-indian-home-atlas_3b23590a.jpg" alt="" />
-            </figure>
-            <figure className="atlas-plane atlas-plane-build">
-              <img src="/manus-storage/jodu-house-under-construction-atlas_2b61b025.jpg" alt="" />
-            </figure>
-            <figure className="atlas-plane atlas-plane-plan">
-              <img src="/manus-storage/jodu-floorplan-material-atlas_185ce442.jpg" alt="" />
-            </figure>
-            {atlasWordmarks.map(({ className, lang, name, direction }) => (
-              <div className={`atlas-wordmark ${className}`} key={className}>
-                <JoduMark className="atlas-wordmark-mark" />
-                <span dir={direction} lang={lang}>{name}</span>
-              </div>
-            ))}
-          </div>
+        <section className="product-hero" id="product">
+          <AmbientResidentialScene />
           <div className="container product-hero-inner">
             <div className="product-hero-copy">
               <p className="eyebrow">

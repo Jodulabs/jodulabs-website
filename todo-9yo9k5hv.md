@@ -43,3 +43,22 @@
 - [x] Raise the house, construction, and plan planes to a clearly legible but secondary level behind the hero.
 - [x] Make the multilingual Jodu field a visible spatial motif rather than barely perceptible watermarking.
 - [x] Validate hero legibility, visual depth, and mobile behavior against the supplied reference frame.
+
+# Continuous motion-field revision
+
+- [x] Replace the current imperceptible atlas drift with a visibly animated canvas-backed field.
+- [x] Animate multilingual Jodu marks and construction geometry on independent paths behind protected hero content.
+- [x] Add reduced-motion and responsive fallbacks that preserve the serious technical presentation.
+- [x] Validate the live preview for immediately perceptible movement before checkpointing.
+
+# Visual-reference reset
+
+- [ ] Obtain a concrete visual reference or explicit directional choice for the hero atmosphere before further implementation.
+- [ ] Convert the chosen reference into agreed rules for composition, imagery, motion, and the role of local scripts.
+
+# Original 3D ambient-scene direction
+
+- [x] Study the reference’s depth, compositional reveal, and restrained ambient-motion principles without replicating its visuals.
+- [x] Define a Jodu-specific scene with Indian residential landscape, under-construction context, plan material, and local-script wordmarks.
+- [x] Build the hero as an original product-first Three.js-style ambient world rather than a static image underlay.
+- [x] Validate the scene against the live Jodu site for motion clarity and serious product presentation.
