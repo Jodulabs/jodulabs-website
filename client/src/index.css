@@ -900,25 +900,25 @@ h3 em {
 }
 .product-hero-inner {
   display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 96px;
-  align-items: end;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 56px;
+  align-items: center;
 }
 .product-hero-copy {
-  padding-bottom: 36px;
+  padding-bottom: 24px;
 }
 .product-hero-copy h1 {
   max-width: 620px;
   margin: 0;
   font-family: "Source Serif 4", serif;
-  font-size: clamp(56px, 6.5vw, 88px);
+  font-size: clamp(54px, 6.2vw, 84px);
   font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 0.96;
 }
 .product-hero-lede {
   max-width: 510px;
-  margin: 30px 0 0;
+  margin: 28px 0 0;
   color: var(--muted);
   font-size: 17px;
   line-height: 1.75;
@@ -927,7 +927,10 @@ h3 em {
   border: 1px solid var(--line);
   padding: 12px;
   background: var(--paper-deep);
-  box-shadow: 14px 16px 0 rgba(32, 39, 42, 0.06);
+  box-shadow: 10px 12px 0 rgba(32, 39, 42, 0.04);
+  max-width: 480px;
+  width: 100%;
+  margin-left: auto;
 }
 .proof-head {
   display: flex;
@@ -2444,7 +2447,7 @@ h3 em {
   z-index: 0;
   inset: 0;
   overflow: hidden;
-  background: linear-gradient(90deg, var(--paper) 0%, rgba(243, 244, 242, 0.98) 32%, rgba(243, 244, 242, 0.76) 49%, rgba(243, 244, 242, 0.16) 79%, rgba(243, 244, 242, 0.38) 100%);
+  background: linear-gradient(90deg, var(--paper) 0%, rgba(243, 244, 242, 0.98) 38%, rgba(243, 244, 242, 0.65) 68%, rgba(243, 244, 242, 0.2) 100%);
 }
 .ambient-residential-scene::after {
   position: absolute;
