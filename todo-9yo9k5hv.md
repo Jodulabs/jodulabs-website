@@ -37,3 +37,9 @@
 - [x] Limit the 3D atmosphere to a sparse three-layer composition with low-contrast construction and plan references.
 - [x] Keep multilingual Jodu marks as occasional blueprint-like traces rather than visible decorative objects.
 - [x] Validate that the product content remains the primary visual focus on desktop and mobile.
+
+# Visibility rebalance
+
+- [x] Raise the house, construction, and plan planes to a clearly legible but secondary level behind the hero.
+- [x] Make the multilingual Jodu field a visible spatial motif rather than barely perceptible watermarking.
+- [x] Validate hero legibility, visual depth, and mobile behavior against the supplied reference frame.

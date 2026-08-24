@@ -112,6 +112,18 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const updateAtlasPerspective = (event: React.PointerEvent<HTMLElement>) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 1.35;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * -0.9;
+    event.currentTarget.style.setProperty("--atlas-x", `${x.toFixed(2)}deg`);
+    event.currentTarget.style.setProperty("--atlas-y", `${y.toFixed(2)}deg`);
+  };
+  const resetAtlasPerspective = (event: React.PointerEvent<HTMLElement>) => {
+    event.currentTarget.style.setProperty("--atlas-x", "0deg");
+    event.currentTarget.style.setProperty("--atlas-y", "0deg");
+  };
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (email.trim()) setSubmitted(true);
@@ -149,7 +161,12 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="product-hero" id="product">
+        <section
+          className="product-hero"
+          id="product"
+          onPointerLeave={resetAtlasPerspective}
+          onPointerMove={updateAtlasPerspective}
+        >
           <div className="technical-atlas" aria-hidden="true">
             <div className="atlas-grid" />
             <figure className="atlas-plane atlas-plane-home">

@@ -110,3 +110,7 @@ The motion field must avoid looking like a scatter of unrelated watermarks. It u
 ## Style Decisions — Technical Construction Atlas
 
 The final atmosphere should not become a visual collage. It uses three muted planes only: a completed Indian house, a house in progress, and a working floor-plan surface. CSS perspective places those planes at different depths, while slow wordmark movement gives the background dimensionality without calling attention to motion. The six Jodu language renderings are present as low-opacity technical traces rather than visible brand units. The site remains a serious technical product reference: construction context is present, but the product proof always leads.
+
+### Interaction refinement
+
+On desktop pointer devices, the atlas responds with a small perspective shift. This is the primary moment of dimensionality: it rewards exploration without adding a feature control, does not move copy or product proof, and is disabled for coarse pointers and reduced-motion preferences.
