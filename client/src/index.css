@@ -2098,3 +2098,337 @@ h3 em {
     opacity: 1;
   }
 }
+
+/* Design philosophy: The hero underlay is a moving field condition, not a placed badge — authentic construction texture, local scripts, and the canonical mark pass behind the product surface at different depths. */
+.hero-local-lockup,
+.hero-construction-texture {
+  display: none;
+}
+.hero-motion-field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-motion-field::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--paper) 0%, rgba(243, 244, 242, 0.98) 34%, rgba(243, 244, 242, 0.76) 52%, rgba(243, 244, 242, 0.46) 72%, rgba(243, 244, 242, 0.68) 100%),
+    linear-gradient(180deg, rgba(243, 244, 242, 0.72), transparent 28%, rgba(243, 244, 242, 0.4) 100%);
+  content: "";
+}
+.hero-motion-field::after {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(32, 39, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 39, 42, 0.08) 1px, transparent 1px);
+  background-size: 138px 138px;
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 31%, black 55%, black 100%);
+  content: "";
+}
+.hero-motion-image {
+  position: absolute;
+  inset: -8% -8% -8% 34%;
+  opacity: 0.38;
+  animation: construction-pan 23s var(--ease) infinite alternate;
+}
+.hero-motion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55% center;
+  filter: grayscale(1) contrast(0.84) sepia(0.16);
+}
+.hero-motion-script {
+  position: absolute;
+  z-index: 4;
+  color: var(--clay-dark);
+  font-size: clamp(8rem, 15vw, 17rem);
+  font-weight: 500;
+  line-height: 0.72;
+  letter-spacing: -0.06em;
+  opacity: 0.075;
+  white-space: nowrap;
+}
+.script-float-kn {
+  top: -11%;
+  left: 41%;
+  font-family: "Noto Sans Kannada", sans-serif;
+  animation: script-drift-a 18s var(--ease) infinite alternate;
+}
+.script-float-ta {
+  right: 7%;
+  bottom: -15%;
+  font-family: "Noto Sans Tamil", sans-serif;
+  font-size: clamp(8rem, 16vw, 18rem);
+  opacity: 0.065;
+  animation: script-drift-b 21s var(--ease) infinite alternate;
+}
+.script-float-te {
+  top: 44%;
+  right: -13%;
+  font-family: "Noto Sans Telugu", sans-serif;
+  font-size: clamp(5.6rem, 10vw, 11rem);
+  opacity: 0.06;
+  animation: script-drift-c 16s var(--ease) infinite alternate;
+}
+.script-float-hi {
+  left: 26%;
+  bottom: -14%;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-size: clamp(5.6rem, 9vw, 10rem);
+  opacity: 0.045;
+  animation: script-drift-b 25s var(--ease) infinite alternate-reverse;
+}
+.script-float-ur {
+  top: 16%;
+  right: 18%;
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: clamp(4.8rem, 8vw, 9rem);
+  line-height: 1;
+  opacity: 0.045;
+  animation: script-drift-a 22s var(--ease) infinite alternate-reverse;
+}
+.hero-motion-stamp {
+  position: absolute;
+  z-index: 4;
+  top: 21%;
+  right: -1%;
+  display: grid;
+  justify-items: center;
+  width: 168px;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+  transform: rotate(-9deg);
+  animation: stamp-drift 26s var(--ease) infinite alternate;
+}
+.hero-motion-stamp-mark {
+  width: 84px;
+  height: 84px;
+  filter: grayscale(1) contrast(1.18);
+}
+.hero-motion-stamp span {
+  margin-top: 10px;
+  color: var(--ink);
+  font-family: "Noto Sans Kannada", sans-serif;
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1;
+}
+@keyframes construction-pan {
+  from { transform: scale(1.02) translate3d(0, -1%, 0); }
+  to { transform: scale(1.1) translate3d(-4%, 2%, 0); }
+}
+@keyframes script-drift-a {
+  from { transform: translate3d(0, 0, 0) rotate(-6deg); }
+  to { transform: translate3d(38px, -27px, 0) rotate(-2deg); }
+}
+@keyframes script-drift-b {
+  from { transform: translate3d(0, 0, 0) rotate(4deg); }
+  to { transform: translate3d(-45px, -22px, 0) rotate(1deg); }
+}
+@keyframes script-drift-c {
+  from { transform: translate3d(0, 0, 0) rotate(3deg); }
+  to { transform: translate3d(-21px, 24px, 0) rotate(-1deg); }
+}
+@keyframes stamp-drift {
+  from { transform: translate3d(0, 0, 0) rotate(-9deg) scale(1); }
+  to { transform: translate3d(-55px, 34px, 0) rotate(-3deg) scale(1.08); }
+}
+@media (max-width: 900px) {
+  .hero-motion-field::before {
+    background: linear-gradient(180deg, rgba(243, 244, 242, 0.7) 0%, rgba(243, 244, 242, 0.98) 51%, var(--paper) 100%);
+  }
+  .hero-motion-image {
+    inset: -2% -23% auto 16%;
+    height: 60%;
+    opacity: 0.22;
+  }
+  .script-float-kn {
+    top: 14%;
+    left: 36%;
+  }
+  .script-float-hi,
+  .script-float-ur {
+    display: none;
+  }
+  .hero-motion-stamp {
+    top: 15%;
+    right: -5%;
+    width: 135px;
+  }
+  .hero-motion-stamp-mark {
+    width: 68px;
+    height: 68px;
+  }
+  .hero-motion-stamp span {
+    font-size: 28px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-motion-field::after {
+    background-size: 90px 90px;
+    mask-image: linear-gradient(180deg, black 0%, transparent 60%);
+  }
+  .hero-motion-image {
+    inset: 0 -20% auto 0;
+    height: 240px;
+    opacity: 0.2;
+  }
+  .hero-motion-script {
+    font-size: 4.7rem;
+  }
+  .script-float-kn {
+    top: 8%;
+    left: 31%;
+  }
+  .script-float-ta,
+  .script-float-te,
+  .hero-motion-stamp {
+    top: 13%;
+    right: -6%;
+    width: 106px;
+    opacity: 0.1;
+  }
+  .hero-motion-stamp-mark {
+    width: 52px;
+    height: 52px;
+  }
+  .hero-motion-stamp span {
+    margin-top: 5px;
+    font-size: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion-image,
+  .hero-motion-script,
+  .hero-motion-stamp {
+    animation: none;
+  }
+}
+
+/* Motion-field refinement: repeat the mark and its local-script line as drifting site stamps, never as a content-level logo lock-up. */
+.hero-motion-script {
+  display: none;
+}
+.hero-motion-stamp {
+  top: auto;
+  right: auto;
+  display: grid;
+  justify-items: center;
+  width: 154px;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  transform: none;
+  animation: none;
+}
+.hero-motion-stamp-mark {
+  width: 76px;
+  height: 76px;
+  filter: grayscale(1) contrast(1.18);
+}
+.hero-motion-stamp span {
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 35px;
+  font-weight: 500;
+  line-height: 1;
+}
+.hero-motion-stamp span[lang="kn"] { font-family: "Noto Sans Kannada", sans-serif; }
+.hero-motion-stamp span[lang="ta"] { font-family: "Noto Sans Tamil", sans-serif; }
+.hero-motion-stamp span[lang="hi"] { font-family: "Noto Sans Devanagari", sans-serif; }
+.motion-stamp-a {
+  top: 9%;
+  right: -2%;
+  animation: stamp-field-a 25s var(--ease) infinite alternate;
+}
+.motion-stamp-b {
+  right: 31%;
+  bottom: -8%;
+  width: 118px;
+  opacity: 0.08;
+  animation: stamp-field-b 29s var(--ease) infinite alternate;
+}
+.motion-stamp-b .hero-motion-stamp-mark {
+  width: 56px;
+  height: 56px;
+}
+.motion-stamp-b span {
+  margin-top: 7px;
+  font-size: 27px;
+}
+.motion-stamp-c {
+  top: 48%;
+  left: 42%;
+  width: 96px;
+  opacity: 0.07;
+  animation: stamp-field-c 22s var(--ease) infinite alternate;
+}
+.motion-stamp-c .hero-motion-stamp-mark {
+  width: 45px;
+  height: 45px;
+}
+.motion-stamp-c span {
+  margin-top: 6px;
+  font-size: 22px;
+}
+@keyframes stamp-field-a {
+  from { transform: translate3d(0, 0, 0) rotate(-9deg) scale(1); }
+  to { transform: translate3d(-55px, 34px, 0) rotate(-3deg) scale(1.08); }
+}
+@keyframes stamp-field-b {
+  from { transform: translate3d(0, 0, 0) rotate(5deg) scale(1); }
+  to { transform: translate3d(39px, -48px, 0) rotate(-2deg) scale(1.1); }
+}
+@keyframes stamp-field-c {
+  from { transform: translate3d(0, 0, 0) rotate(-5deg) scale(1); }
+  to { transform: translate3d(-30px, 25px, 0) rotate(4deg) scale(0.94); }
+}
+@media (max-width: 900px) {
+  .motion-stamp-a {
+    top: 15%;
+    right: -5%;
+    width: 135px;
+  }
+  .motion-stamp-a .hero-motion-stamp-mark {
+    width: 68px;
+    height: 68px;
+  }
+  .motion-stamp-a span {
+    font-size: 28px;
+  }
+  .motion-stamp-c {
+    left: 52%;
+  }
+}
+@media (max-width: 600px) {
+  .motion-stamp-b,
+  .motion-stamp-c {
+    display: none;
+  }
+  .motion-stamp-a {
+    top: 13%;
+    right: -6%;
+    width: 106px;
+    opacity: 0.1;
+  }
+  .motion-stamp-a .hero-motion-stamp-mark {
+    width: 52px;
+    height: 52px;
+  }
+  .motion-stamp-a span {
+    margin-top: 5px;
+    font-size: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion-stamp {
+    animation: none;
+  }
+}

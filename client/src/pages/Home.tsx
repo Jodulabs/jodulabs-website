@@ -141,20 +141,25 @@ export default function Home() {
 
       <main id="top">
         <section className="product-hero" id="product">
-          <div className="hero-construction-texture" aria-hidden="true">
-            <img
-              src="/manus-storage/jodu-residential-construction-underlay_d9fda240.jpg"
-              alt=""
-            />
-          </div>
-          <div className="hero-local-lockup" aria-hidden="true">
-            <JoduMark className="hero-local-lockup-mark" />
-            <div className="hero-local-script-stack">
-              <span className="hero-local-script hero-local-script-kn" lang="kn">
-                ಜೋಡು
-              </span>
+          <div className="hero-motion-field" aria-hidden="true">
+            <div className="hero-motion-image">
+              <img
+                src="/manus-storage/jodu-residential-construction-underlay_d9fda240.jpg"
+                alt=""
+              />
             </div>
-            <span className="hero-local-lockup-rule" />
+            <div className="hero-motion-stamp motion-stamp-a">
+              <JoduMark className="hero-motion-stamp-mark" />
+              <span lang="kn">ಜೋಡು</span>
+            </div>
+            <div className="hero-motion-stamp motion-stamp-b">
+              <JoduMark className="hero-motion-stamp-mark" />
+              <span lang="ta">ஜோடு</span>
+            </div>
+            <div className="hero-motion-stamp motion-stamp-c">
+              <JoduMark className="hero-motion-stamp-mark" />
+              <span lang="hi">जोडु</span>
+            </div>
           </div>
           <div className="container product-hero-inner">
             <div className="product-hero-copy">

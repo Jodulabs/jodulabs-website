@@ -98,3 +98,11 @@ Contextual imagery should show the material reality of Indian residential work �
 ## Style Decisions — Local-Script Logo Lock-Up
 
 This decision supersedes the proposed standalone notation field. The multilingual treatment belongs inside the hero as a background cue: the canonical Jodu mark sits above a single local-script wordmark, which changes slowly between selected scripts. The lock-up never has language labels, borders, cards, or explanatory copy. It should read like a light site stamp caught in the construction texture — visible enough to notice, quiet enough to leave the product proof in charge.
+
+## Style Decisions — Full-Bleed Motion Field
+
+This decision supersedes the placed logo lock-up. The hero should behave like a field of partially seen site material, not a composition with another framed brand component. Under the product copy and plan canvas, the construction image pans very slowly; oversized fragments of the Jodu name in local scripts and the canonical tiled logo each travel on independent paths at low contrast. Nothing is labelled or expected to be read as a translation. The result should feel discovered on a second look, with the content remaining fully legible at the first.
+
+### Refinement: Background stamp and script traces
+
+The motion field must avoid looking like a scatter of unrelated watermarks. It uses a few partially cropped stamps, each pairing the actual Jodu mark with a local-script word beneath it. Their independent, slow movement makes the relationship feel like a field condition while avoiding a formal lock-up or translation board.

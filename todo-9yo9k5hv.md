@@ -17,3 +17,10 @@
 - [x] Replace the floating-script direction with a single Jodu mark and one local-script wordmark directly beneath it.
 - [x] Place the lock-up as a subtle, animated background motif inside the residential construction context.
 - [x] Validate that the lock-up remains a brand cue rather than a language board on desktop and mobile.
+
+# Full-bleed motion-field revision
+
+- [x] Remove the visibly positioned hero logo lock-up.
+- [x] Compose a full-bleed construction, local-script, and brand-geometry underlay at multiple depths.
+- [x] Add restrained background motion with an accessible reduced-motion fallback.
+- [x] Validate hero legibility and the new underlay across desktop and mobile before checkpointing.
