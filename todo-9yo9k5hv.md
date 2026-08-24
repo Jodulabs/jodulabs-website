@@ -24,3 +24,16 @@
 - [x] Compose a full-bleed construction, local-script, and brand-geometry underlay at multiple depths.
 - [x] Add restrained background motion with an accessible reduced-motion fallback.
 - [x] Validate hero legibility and the new underlay across desktop and mobile before checkpointing.
+
+# 3D construction-atlas revision
+
+- [x] Create an Indian residential background set spanning completed homes, construction-stage houses, and abstracted plan material.
+- [x] Build a multi-plane 3D parallax atmosphere that can sit behind the website without competing with product proof.
+- [x] Include Jodu mark-and-word treatments in Kannada, English, Tamil, Telugu, Urdu, and Hindi as drifting background elements.
+- [x] Validate visual hierarchy, performance, reduced-motion behavior, and responsive depth before checkpointing.
+
+# Technical restraint refinement
+
+- [x] Limit the 3D atmosphere to a sparse three-layer composition with low-contrast construction and plan references.
+- [x] Keep multilingual Jodu marks as occasional blueprint-like traces rather than visible decorative objects.
+- [x] Validate that the product content remains the primary visual focus on desktop and mobile.

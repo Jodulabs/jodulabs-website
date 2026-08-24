@@ -106,3 +106,7 @@ This decision supersedes the placed logo lock-up. The hero should behave like a 
 ### Refinement: Background stamp and script traces
 
 The motion field must avoid looking like a scatter of unrelated watermarks. It uses a few partially cropped stamps, each pairing the actual Jodu mark with a local-script word beneath it. Their independent, slow movement makes the relationship feel like a field condition while avoiding a formal lock-up or translation board.
+
+## Style Decisions — Technical Construction Atlas
+
+The final atmosphere should not become a visual collage. It uses three muted planes only: a completed Indian house, a house in progress, and a working floor-plan surface. CSS perspective places those planes at different depths, while slow wordmark movement gives the background dimensionality without calling attention to motion. The six Jodu language renderings are present as low-opacity technical traces rather than visible brand units. The site remains a serious technical product reference: construction context is present, but the product proof always leads.

@@ -21,6 +21,15 @@ const assets = {
   sheet: "/product/plan-sheet-30x40-g1-1.png",
 };
 
+const atlasWordmarks = [
+  { className: "atlas-wordmark-kn", lang: "kn", name: "ಜೋಡು" },
+  { className: "atlas-wordmark-en", lang: "en", name: "jodu" },
+  { className: "atlas-wordmark-ta", lang: "ta", name: "ஜோடு" },
+  { className: "atlas-wordmark-te", lang: "te", name: "జోడు" },
+  { className: "atlas-wordmark-ur", lang: "ur", name: "جوڈو", direction: "rtl" },
+  { className: "atlas-wordmark-hi", lang: "hi", name: "जोडु" },
+];
+
 const workflow = [
   [
     "01",
@@ -141,25 +150,23 @@ export default function Home() {
 
       <main id="top">
         <section className="product-hero" id="product">
-          <div className="hero-motion-field" aria-hidden="true">
-            <div className="hero-motion-image">
-              <img
-                src="/manus-storage/jodu-residential-construction-underlay_d9fda240.jpg"
-                alt=""
-              />
-            </div>
-            <div className="hero-motion-stamp motion-stamp-a">
-              <JoduMark className="hero-motion-stamp-mark" />
-              <span lang="kn">ಜೋಡು</span>
-            </div>
-            <div className="hero-motion-stamp motion-stamp-b">
-              <JoduMark className="hero-motion-stamp-mark" />
-              <span lang="ta">ஜோடு</span>
-            </div>
-            <div className="hero-motion-stamp motion-stamp-c">
-              <JoduMark className="hero-motion-stamp-mark" />
-              <span lang="hi">जोडु</span>
-            </div>
+          <div className="technical-atlas" aria-hidden="true">
+            <div className="atlas-grid" />
+            <figure className="atlas-plane atlas-plane-home">
+              <img src="/manus-storage/jodu-finished-indian-home-atlas_3b23590a.jpg" alt="" />
+            </figure>
+            <figure className="atlas-plane atlas-plane-build">
+              <img src="/manus-storage/jodu-house-under-construction-atlas_2b61b025.jpg" alt="" />
+            </figure>
+            <figure className="atlas-plane atlas-plane-plan">
+              <img src="/manus-storage/jodu-floorplan-material-atlas_185ce442.jpg" alt="" />
+            </figure>
+            {atlasWordmarks.map(({ className, lang, name, direction }) => (
+              <div className={`atlas-wordmark ${className}`} key={className}>
+                <JoduMark className="atlas-wordmark-mark" />
+                <span dir={direction} lang={lang}>{name}</span>
+              </div>
+            ))}
           </div>
           <div className="container product-hero-inner">
             <div className="product-hero-copy">
