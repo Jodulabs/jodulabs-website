@@ -59,7 +59,7 @@ export default function Home() {
         <InlineClip id="website-project-feedback" label="A client marks a spot on a captured view of the house and adds a note; the designer opens that note in the project" />
       </section>
       <section className="mobile-section container" id="mobile">
-        <div className="mobile-copy"><p className="eyebrow">Jodu on Android</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on Android. They arrive in the Jodu project for the designer to review.</p><a className="button button-dark" href={playUrl} target="_blank" rel="noreferrer">Get it on Google Play <ArrowUpRight size={17} /></a><div className="app-soon"><h3>Coming to the app</h3><ul><li>BOQ</li><li>Schedules</li><li>Progress tracking</li></ul></div></div>
+        <div className="mobile-copy"><p className="eyebrow">Jodu on mobile</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on their phone. They arrive in the Jodu project for the designer to review.</p><a className="button button-dark" href={playUrl} target="_blank" rel="noreferrer">Get it on Google Play <ArrowUpRight size={17} /></a><div className="app-soon"><h3>Coming to the app</h3><ul><li>BOQ</li><li>Schedules</li><li>Progress tracking</li></ul></div></div>
         <div className="phone-row">{phones.map(phone => <img className="phone" src={phone.src} alt={phone.alt} width={720} height={1416} loading="lazy" key={phone.src} />)}</div>
       </section>
       <section className="section container product-section" id="workflow">
