@@ -21,8 +21,8 @@ export default function Downloads() {
         </a>
         <nav className="desktop-nav">
           <a href="/">Product</a>
-          <a href="/#demo">Demo</a>
-          <a href="/#plans">Plans</a>
+          <a href="/#workflow">Demo</a>
+          <a href="/#access">Access</a>
           <a className="is-active" href="/downloads">
             Downloads
           </a>
@@ -208,8 +208,8 @@ export default function Downloads() {
             <div>
               <Check size={16} />
               <p>
-                For access questions or early testing, contact Jodu Labs or use
-                the access form on the product page.
+                For access questions or early testing, contact Jodu Labs or email
+                hello@jodulabs.com.
               </p>
             </div>
           </div>
@@ -227,8 +227,8 @@ export default function Downloads() {
           </div>
           <div className="footer-links">
             <a href="/">Product</a>
-            <a href="/#demo">Demo</a>
-            <a href="/#plans">Plans</a>
+            <a href="/#workflow">Demo</a>
+            <a href="/#access">Access</a>
             <a href="/downloads">Downloads</a>
             <a href="mailto:hello@jodulabs.com">Email us</a>
           </div>

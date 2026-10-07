@@ -6,7 +6,7 @@ that this repo has no access to, so **everything a website author needs about th
 product is written down here.** Do not invent product facts. If a claim is not in
 this file, it does not go on the site.
 
-**Last verified against the product repo:** 2026-08-13.
+**Showcase verification:** 2026-10-07. The platform packaging details below remain dated 2026-08-13; no new release availability is claimed.
 
 ---
 
@@ -33,7 +33,9 @@ everything else is a view of it. Deliberately narrowed to the **G+1 / G+2 RCC
 house**, in the masonry that house is actually built in — see §4, "Build it in
 the masonry your region uses".
 
-One-line positioning: *One model. Every deliverable, in step.*
+One-line positioning: *Design the house. Keep every detail connected.*
+
+Manual authoring is a complete first-class workflow. AI assistance is optional. Full floor-plan generation is work in progress, not a current product promise.
 
 **Product promise:** take a construction-literate professional from plot and
 rough program to a credible, signed-off IS 962 floor-plan PDF — with the
@@ -227,7 +229,7 @@ State these plainly if asked; never imply otherwise.
 - **Curved / non-rectilinear plans** are out of scope.
 - **MEP drawings** and **structural calculations** are out of scope.
 - **Real-time multi-user collaboration** is out of scope.
-- **Photorealistic rendering** is out of scope.
+- The interactive 3D viewer is not a photorealistic renderer. A separate photo workflow exists in the current product but is not demonstrated on this site.
 - **Homeowner self-design flows** are out of scope.
 - **Automatic recognition of floors, walls, openings or rooms from an existing
   drawing**, and automatic conversion of a drawing into a model, are out of
@@ -237,9 +239,10 @@ State these plainly if asked; never imply otherwise.
 
 - Desktop ↔ cloud lease handoff and the `.jodu` package (UI not mounted).
 - The facade catalogue **curator bench** (development-only tooling).
-- Program & Concepts and the authoring assistant are implemented but still in
-  internal review — describe them softly if at all, as part of the workflow
-  rather than as headline features.
+- Full AI floor-plan generation is work in progress. Show bounded AI tasks rather than suggesting autonomous house generation.
+- Ask Jodu was verified live with Pi on 2026-10-07: it answered room counts by storey with a project source.
+- Exterior Ideas was verified live with Pi: a real house capture and brief produced three generated inspiration images. These do not mutate the building model.
+- Finish from a brief is implemented as catalogue-bounded evaluation with staged finish intents. The site pairs the actual brief-entry workspace with a labelled authored interior as a finish reference; a successful run was not captured because its current evaluation provider is unconfigured. Provider/workflow changes are deferred by user direction. Do not label the entry screen or manually authored interior as an AI result.
 
 ---
 
@@ -336,34 +339,19 @@ concrete example — it is real and it is verified.
 
 ---
 
-## 10. Current site copy that is inaccurate
+## 10. Current showcase and evidence limits
 
-Checked against `client/src/pages/Home.tsx` and `client/src/pages/Downloads.tsx`
-on 2026-08-13:
-
-- **All five screenshots were broken links** (404 from `raw.githubusercontent.com`).
-  Fixed by committing real assets to `client/public/product/`.
-- **The browser app is missing entirely.** The site presents desktop as the first
-  release surface, but `app.jodulabs.com` is live today and desktop is not
-  released. Downloads and the platform section both need this.
-- **The product is undersold.** The site says "compose a home, review the model,
-  read the quantities". It omits the priced BoQ with an editable rate book, GST,
-  the material statement in bags and brass, the IS-962 drawing sets, the
-  schedules set, DXF/DWG export, and the finish cascade — the substance of what
-  Jodu actually produces.
-- **The FAQ "Does Jodu replace existing CAD tools?" must go**, along with its
-  answer. It frames Jodu as a companion to a drafting tool, which is the
-  positioning we are dropping (rule 7 in §9). If a "what is this, exactly"
-  question is still wanted in that slot, answer it by describing the single
-  model and the deliverables that come off it.
-- **"A focused surface for residential planning and downstream coordination"**
-  and similar phrasing across Home and Downloads carries the same comparative
-  framing and should be rewritten.
-- **Android is described only as "in development"**; it is on Google Play
-  internal testing with a prepared store listing.
-- **"Jodu is a focused authoring tool for Indian residential plans"** is thin.
-  The stronger and equally true framing is "a building modeller for the Indian
-  house — one model, every deliverable, in step."
+- Main model: **The Gable House**, an authored housing showcase on a 40 × 60 ft plot, ground plus first floor. No built-project or client provenance is claimed.
+- Product geometry and finishes captured at revision 267; representative rates added at revision 268 without changing geometry. The project was renamed through the normal project API.
+- Live quantity response at revision 268: all rates entered; total ₹45,64,862 including ₹6,96,335 GST. Rates are illustrative, not a market-price promise or quotation. Quantities remain model-derived.
+- The 3D hero uses the actual GLB export. A website viewer sets its camera, lights and ground plane; it does not author substitute house geometry. The initial poster is captured from that viewer. The GLB is loaded only on request.
+- Three Remotion demos show real exterior brief/inspiration, finish brief/authored reference, and Ask Jodu/source interactions. They use the managed browser and preserve the authored house.
+- Product screenshots, finish-brief entry and Ask Jodu are real platform captures. The manual wall-drawing video comes from the published product help catalogue and uses a separate demonstration project.
+- The PDF sheet preview is the existing authentic 30 × 40 ft reference-house output, explicitly labelled separately. Strict PDF exports for The Gable House are currently blocked by unresolved/unsupported roof and structure relationships.
+- AI inspiration images come from Jodu’s actual Exterior Ideas workflow and are explicitly labelled inspiration. They are not measured model views or photos of a built house.
+- Mobile preview is excluded. The public homepage does not promote an untested mobile workflow.
+- Access uses the app and email links. There is no lead form or false delivery confirmation.
+- Local verification and capture provenance are recorded in `docs/showcase-evidence.md`.
 
 ---
 
