@@ -5,6 +5,11 @@ import InlineClip from "../components/InlineClip";
 import JoduMark from "../components/brand/JoduMark";
 const HouseShowcase = lazy(() => import("../components/HouseShowcase"));
 const appUrl = "https://app.jodulabs.com/";
+const playUrl = "https://play.google.com/store/apps/details?id=com.jodulabs.jodu";
+const phones = [
+  { src: "/showcase/mobile-1.png", alt: "The Jodu Android app for the Sharma Residence project, offering a site visit and a house brief" },
+  { src: "/showcase/mobile-2.png", alt: "A house brief in the Jodu Android app: a family of five, three bedrooms, a pooja room and a home office" },
+];
 const views = [
   { name: "Plan", image: "/showcase/plan.png", title: "Draw with intent. Edit with precision.", copy: "Work floor by floor with exact dimensions, snaps and editable properties.", alt: "The Gable House ground-floor plan in Jodu’s authoring workspace" },
   { name: "3D", image: "/showcase/exterior.png", title: "See what you are building.", copy: "Review the roof, openings and materials in the same model.", alt: "The Gable House in Jodu’s 3D review workspace" },
@@ -14,7 +19,7 @@ const views = [
 const roles = [
   { id: "for-designers", name: "House designers & civil engineers", line: "Develop the design. Keep the details connected.", copy: "Draw and edit plans, explore ideas with AI, and prepare drawings, quantities and schedules from one project.", link: "Explore the workflow", href: "#workflow" },
   { id: "for-contractors", name: "Contractors & builders", line: "Understand the work before taking it to site.", copy: "Review the house in 3D, inspect the bill of quantities (BOQ) and price it with your own rates.", link: "See quantities", href: "#product-views" },
-  { id: "for-homeowners", name: "Homeowners", line: "See your home. Make your feedback clear.", copy: "Explore the rooms in 3D and mark feedback on a captured view for your designer.", link: "See how feedback works", href: "#feedback" },
+  { id: "for-homeowners", name: "Homeowners", line: "Share what you need. See your home take shape.", copy: "Share your requirements from your phone, explore your home in 3D and mark feedback for your designer.", link: "Get the app", href: "#mobile" },
 ];
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,6 +57,10 @@ export default function Home() {
       <section className="feedback-section container" id="feedback">
         <div className="feedback-copy"><p className="eyebrow">Client feedback</p><h2>Discuss changes<br />where they matter.</h2><p>Share a 3D view with your client. They capture a view, mark a spot and leave a note you can review in the project.</p><blockquote className="feedback-quote">“Can we shift this window to the right? We want to keep the middle of this wall free for the TV unit.”</blockquote></div>
         <InlineClip id="website-project-feedback" label="A client marks a spot on a captured view of the house and adds a note; the designer opens that note in the project" />
+      </section>
+      <section className="mobile-section container" id="mobile">
+        <div className="mobile-copy"><p className="eyebrow">Jodu on Android</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on Android. They arrive in the Jodu project for the designer to review.</p><a className="button button-dark" href={playUrl} target="_blank" rel="noreferrer">Get it on Google Play <ArrowUpRight size={17} /></a><div className="app-soon"><h3>Coming to the app</h3><ul><li>BOQ</li><li>Schedules</li><li>Progress tracking</li></ul></div></div>
+        <div className="phone-row">{phones.map(phone => <img className="phone" src={phone.src} alt={phone.alt} width={720} height={1416} loading="lazy" key={phone.src} />)}</div>
       </section>
       <section className="section container product-section" id="workflow">
         <div className="section-heading"><p className="eyebrow">The product</p><h2>From the first wall<br />to the drawing set.</h2></div>

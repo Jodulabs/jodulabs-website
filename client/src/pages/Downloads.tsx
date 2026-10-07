@@ -10,6 +10,8 @@ import {
 import JoduMark from "../components/brand/JoduMark";
 
 const appUrl = "https://app.jodulabs.com/";
+const playUrl =
+  "https://play.google.com/store/apps/details?id=com.jodulabs.jodu";
 
 export default function Downloads() {
   return (
@@ -49,7 +51,7 @@ export default function Downloads() {
           </div>
           <p>
             Jodu has a live browser workspace, a desktop app in preparation, and
-            an Android companion in internal testing. These surfaces have
+            an Android companion on Google Play. These surfaces have
             different roles and are not feature-equivalent.
           </p>
         </div>
@@ -145,29 +147,33 @@ export default function Downloads() {
             <div className="platform-copy">
               <div className="platform-label">
                 <span>Android companion</span>
-                <strong className="status-pill status-pill-muted">
-                  Internal testing
+                <strong className="status-pill status-pill-live">
+                  Live on Google Play
                 </strong>
               </div>
               <h2>Capture information away from the desk.</h2>
               <p>
                 The Android app is an offline-first field companion for house
-                briefs, site measurements and observations, photos, voice notes,
-                location and orientation, and 3D project review. Information
-                captured on the phone is reviewed and applied by a professional;
-                the phone does not author the building model directly.
+                briefs and site visits: notes, readings, photos, voice notes,
+                compass and plot marking. Review what you captured, then send
+                it to your Jodu project, where a professional reviews each
+                item. The phone does not author the building model and is not a
+                mobile version of the desktop workspace.
               </p>
               <div className="platform-actions">
-                <button
-                  className="button button-outline"
-                  disabled
-                  data-testid="android-download-disabled"
+                <a
+                  className="button button-dark"
+                  href={playUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="android-download-link"
                 >
-                  <Smartphone size={16} /> No public download
-                </button>
+                  <Smartphone size={16} /> Get it on Google Play{" "}
+                  <ArrowUpRight size={15} />
+                </a>
                 <span className="platform-note">
-                  The app is on the Google Play internal testing track and is
-                  not publicly listed.
+                  Android only. Works offline; sending needs a link to a Jodu
+                  project.
                 </span>
               </div>
             </div>

@@ -86,7 +86,7 @@ This is the section most likely to be wrong on the site. Read it carefully.
 |---|---|---|---|
 | **Browser app** | React 19 + FastAPI backend, deployed at `app.jodulabs.com` (frontend on Render, backend on `api.jodulabs.com` via Kamal) | **Live and running.** Account-based: sign-up, email verification, and password reset flows exist. This is the surface where the product actually runs today. | "Jodu runs in the browser at app.jodulabs.com." Before writing anything about *open* sign-up, confirm with Jodu Labs whether registration is open or invite-only. |
 | **Desktop** | Tauri v2 shell around the same React frontend + a packaged Python runtime sidecar with a local SQLite database | **Built by CI, not publicly released.** Debian x86_64 `.deb` and Windows x86_64 NSIS `.exe` are produced by the packaging workflow. **The Windows installer is unsigned** and is internal-testing only. macOS arm64 is build-ready but intentionally held until Apple Developer ID signing and notarization are set up. | "Desktop app in preparation" / "releasing soon". Do **not** publish download links or version numbers yet. Do not promise macOS. |
-| **Android** | Flutter | **On the Google Play internal testing track.** Package `com.jodulabs.jodu`, app name "Jodu". Store listing assets (icon, feature graphic, six phone screenshots, description) are prepared. Not on public Play Store. | "Android companion app in internal testing" or "in development". Do not link to a Play Store page. |
+| **Android** | Flutter | **Live on Google Play.** Package `com.jodulabs.jodu`, app name "Jodu". Store page: https://play.google.com/store/apps/details?id=com.jodulabs.jodu | "Android companion app, live on Google Play". Link to the Play page. Describe it as a field companion, not a mobile version of the authoring tool. |
 | **iOS** | Flutter | App icons exist in the repo; **there is no iOS build or release pipeline.** | Say nothing about iOS. |
 
 **Desktop is not the first release surface.** Site copy that implies the desktop
@@ -215,7 +215,7 @@ derived centreline through ordinary native wall authoring.
 and not an importer.** It is an adoption path where the user confirms every
 wall. Copy must not suggest "bring in your DWG and get a model".
 
-### Mobile field companion (internal testing)
+### Mobile field companion (live on Google Play)
 The Android app is an **offline-first field companion**, not an authoring tool:
 
 - **House briefs** — record rooms, requirements, and notes before a plan is drawn
@@ -372,7 +372,7 @@ concrete example — it is real and it is verified.
 - Website clips show real exterior ideas, finish alternatives, Ask Jodu/source interactions, and client feedback on a captured view. They use the managed browser and preserve the authored house.
 - Product screenshots are real platform captures of The Gable House. Strict PDF exports for The Gable House are currently blocked by unresolved/unsupported roof and structure relationships, so the homepage shows no Gable House drawing sheet; it lists deliverable formats (PDF, DXF, CSV, IFC) as text.
 - Homepage structure is deliberately sparse: hero, who it is for, AI switcher, client feedback, product tabs with a deliverables list, and a closing section. Do not re-add explanatory blocks for basic modelling actions or provenance captions.
-- Mobile preview is excluded. The public homepage does not promote an untested mobile workflow.
+- The homepage has one compact Android section (`#mobile`): real app screenshots of a fictional project ("Sharma Residence"), captured on a phone with a local-only project, no location or camera data. It frames the app as the homeowner/site entry into the Jodu project, where the designer reviews captures. Items labelled "Coming to the app" (BOQ, schedules, progress tracking) are not available yet. The app screenshots are cropped to remove the status bar and a debug-build banner.
 - Access uses the app and email links. There is no lead form or false delivery confirmation.
 - Local verification and capture provenance are recorded in `docs/showcase-evidence.md`.
 
