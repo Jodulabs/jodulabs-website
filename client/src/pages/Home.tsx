@@ -13,6 +13,7 @@ const phones = [
 const views = [
   { name: "Plan", image: "/showcase/plan.png", title: "Draw with intent. Edit with precision.", copy: "Work floor by floor with exact dimensions, snaps and editable properties.", alt: "The Gable House ground-floor plan in Jodu’s authoring workspace" },
   { name: "3D", image: "/showcase/exterior.png", title: "See what you are building.", copy: "Review the roof, openings and materials in the same model.", alt: "The Gable House in Jodu’s 3D review workspace" },
+  { name: "Sheets", image: "/showcase/sheets.png", title: "Issue-ready drawing sets.", copy: "Compose plans and elevations into sheets for site, approval or client review, and export the PDF set.", alt: "A client review drawing sheet for The Gable House with floor plans and elevations in Jodu" },
   { name: "Schedules", image: "/showcase/schedules.png", title: "The details stay with the house.", copy: "Door, window, room and finish schedules read straight from the model.", alt: "Model-derived schedules for The Gable House" },
   { name: "Quantities", image: "/showcase/estimate.png", title: "Understand the work behind the design.", copy: "Measured quantities, your own rates and a priced bill of quantities.", alt: "The Gable House bill of quantities in Jodu" },
 ];
@@ -21,6 +22,7 @@ const roles = [
   { id: "for-contractors", name: "Contractors & builders", line: "Understand the work before taking it to site.", copy: "Review the house in 3D, inspect the bill of quantities (BOQ) and price it with your own rates.", link: "See quantities", href: "#product-views" },
   { id: "for-homeowners", name: "Homeowners", line: "Share what you need. See your home take shape.", copy: "Share your requirements from your phone, explore your home in 3D and mark feedback for your designer.", link: "Get the app", href: "#mobile" },
 ];
+const quantitiesView = views.findIndex(item => item.name === "Quantities");
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [interactive, setInteractive] = useState(false);
@@ -50,7 +52,7 @@ export default function Home() {
         <div className="section-heading"><p className="eyebrow">Who it’s for</p><h2>Where Jodu fits<br />into your work</h2></div>
         <div className="role-grid">{roles.map(role => <article className="role" id={role.id} key={role.id}>
           <h3 className="role-name">{role.name}</h3><p className="role-line">{role.line}</p><p>{role.copy}</p>
-          <a className="text-link" href={role.href} onClick={role.href === "#product-views" ? () => setView(3) : undefined}>{role.link} <ArrowRight size={16} /></a>
+          <a className="text-link" href={role.href} onClick={role.href === "#product-views" ? () => setView(quantitiesView) : undefined}>{role.link} <ArrowRight size={16} /></a>
         </article>)}</div>
       </section>
       <AIShowcase />
@@ -59,7 +61,7 @@ export default function Home() {
         <InlineClip id="website-project-feedback" label="A client marks a spot on a captured view of the house and adds a note; the designer opens that note in the project" />
       </section>
       <section className="mobile-section container" id="mobile">
-        <div className="mobile-copy"><p className="eyebrow">Jodu on mobile</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on their phone. They arrive in the Jodu project for the designer to review.</p><a className="button button-dark" href={playUrl} target="_blank" rel="noreferrer">Get it on Google Play <ArrowUpRight size={17} /></a><div className="app-soon"><h3>Coming to the app</h3><ul><li>BOQ</li><li>Schedules</li><li>Progress tracking</li></ul></div></div>
+        <div className="mobile-copy"><p className="eyebrow">Jodu on mobile</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on their phone. They arrive in the Jodu project for the designer to review.</p><a className="play-badge" href={playUrl} target="_blank" rel="noreferrer"><img src="/showcase/google-play-badge.png" alt="Get it on Google Play" width="564" height="168" /></a><div className="app-soon"><h3>Coming to the app</h3><ul><li>BOQ</li><li>Schedules</li><li>Progress tracking</li></ul></div></div>
         <div className="phone-row">{phones.map(phone => <img className="phone" src={phone.src} alt={phone.alt} width={720} height={1416} loading="lazy" key={phone.src} />)}</div>
       </section>
       <section className="section container product-section" id="workflow">
@@ -67,7 +69,7 @@ export default function Home() {
         <div className="view-tabs" id="product-views" role="tablist" aria-label="House product views">{views.map((item,index) => <button id={`view-tab-${index}`} role="tab" aria-selected={index===view} aria-controls="house-view" tabIndex={index===view?0:-1} key={item.name} onClick={() => setView(index)} onKeyDown={event => {if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const next=(view+(event.key==='ArrowRight'?1:-1)+views.length)%views.length;setView(next);document.getElementById(`view-tab-${next}`)?.focus();}}}>{item.name}</button>)}</div>
         <div className="view-panel" id="house-view" role="tabpanel" aria-labelledby={`view-tab-${view}`}>
           <a className="media-frame media-product" href={views[view].image} target="_blank" rel="noreferrer" aria-label={`Open full ${views[view].name.toLowerCase()} image`}><img src={views[view].image} alt={views[view].alt} loading="lazy" width="1600" height="1000" /></a>
-          <div className="view-copy">{view === 3 && <div className="estimate-example"><strong>₹45.65 lakh</strong><span>Illustrative estimate</span></div>}<h3>{views[view].title}</h3><p>{views[view].copy}</p></div>
+          <div className="view-copy">{view === quantitiesView && <div className="estimate-example"><strong>₹45.65 lakh</strong><span>Illustrative estimate</span></div>}<h3>{views[view].title}</h3><p>{views[view].copy}</p></div>
         </div>
         <div className="deliverables"><h3>What you can hand over</h3><ul>
           <li><strong>Drawing sheets</strong><span>PDF</span></li>
