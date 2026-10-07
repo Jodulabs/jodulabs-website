@@ -33,7 +33,7 @@ everything else is a view of it. Deliberately narrowed to the **G+1 / G+2 RCC
 house**, in the masonry that house is actually built in — see §4, "Build it in
 the masonry your region uses".
 
-One-line positioning: *Design the house. Keep every detail connected.*
+One-line positioning: *Design the house. Bring everyone into the picture.* Jodu brings the people around a house project into one loop: designers and civil engineers author the model; contractors, builders and homeowners review and discuss it.
 
 Manual authoring is a complete first-class workflow. AI assistance is optional. Full floor-plan generation is work in progress, not a current product promise.
 
@@ -44,13 +44,24 @@ taking professional control away.
 
 ### Who it is for
 
-Indian **civil engineers, structural draftspersons, and technically-literate
-contractors** who are responsible for residential houses and stand behind the
-output — the professional who designs, specifies, and submits G+1 / G+2 homes
-and needs every deliverable to agree with the others.
+Three audiences, each with a different role in one house project:
 
-It is **not** a homeowner self-design tool. Do not write copy aimed at end
-homeowners.
+- **House designers and civil engineers** author the model. They are the
+  initial professional adoption audience: the people who design, specify, and
+  submit G+1 / G+2 homes and need every deliverable to agree with the others.
+- **Contractors and builders** review the house in 3D, inspect the bill of
+  quantities (BOQ) and prepare estimates with their own rates. They do not need
+  to draw on the canvas. Do not promise estimate editing through a public client
+  link.
+- **Homeowners** explore the rooms in 3D and leave feedback on a captured view
+  so the designer can see what they mean. Homeowners are collaborators, not
+  self-design customers: they do not author, and there is no separate homeowner
+  account role.
+
+Write in Indian English with familiar housing terms. Explain "bill of
+quantities (BOQ)" on first use, and keep measured quantities distinct from a
+priced estimate. Homeowner-directed copy is limited to review and feedback; Jodu
+is not a homeowner self-design tool.
 
 ### The core idea to communicate
 
@@ -169,6 +180,17 @@ title block**, ready for municipal submission and contractor handoff. The saved
 Drawing Set workspace previews the actual server-rendered PDF page in-app using
 the same renderer as the export, so what you see is what exports.
 
+### Client feedback on a captured view
+Share a 3D view of the house through a client presentation link. The client
+explores rooms, captures a view, marks a spot and adds a note. The designer
+reviews that note inside the project, with the captured image and marker
+together.
+
+**Honesty rule: the marker is a point on a captured snapshot, not a persistent
+3D annotation on the model. A comment never edits the model automatically.
+There is no chat, reply thread, resolved status or simultaneous editing.**
+Demonstrated by the `website-project-feedback` clip.
+
 ### 3D verification and exploration
 View the same model in 3D to coordinate massing, plus a **House Overview** and a
 click-to-glide **Explore** mode with drag-to-look, collision-safe room and door
@@ -228,9 +250,9 @@ State these plainly if asked; never imply otherwise.
 - **Buildings above G+2** are out of scope.
 - **Curved / non-rectilinear plans** are out of scope.
 - **MEP drawings** and **structural calculations** are out of scope.
-- **Real-time multi-user collaboration** is out of scope.
+- **Real-time multi-user collaboration** is out of scope. Client feedback on a captured view is asynchronous review, not simultaneous editing.
 - The interactive 3D viewer is not a photorealistic renderer. A separate photo workflow exists in the current product but is not demonstrated on this site.
-- **Homeowner self-design flows** are out of scope.
+- **Homeowner self-design flows** are out of scope. Homeowners appear on the site as reviewers who give feedback, not authors.
 - **Automatic recognition of floors, walls, openings or rooms from an existing
   drawing**, and automatic conversion of a drawing into a model, are out of
   scope.
@@ -242,7 +264,7 @@ State these plainly if asked; never imply otherwise.
 - Full AI floor-plan generation is work in progress. Show bounded AI tasks rather than suggesting autonomous house generation.
 - Ask Jodu was verified live with Pi on 2026-10-07: it answered room counts by storey with a project source.
 - Exterior Ideas was verified live with Pi: a real house capture and brief produced three generated inspiration images. These do not mutate the building model.
-- Finish from a brief is implemented as catalogue-bounded evaluation with staged finish intents. The site pairs the actual brief-entry workspace with a labelled authored interior as a finish reference; a successful run was not captured because its current evaluation provider is unconfigured. Provider/workflow changes are deferred by user direction. Do not label the entry screen or manually authored interior as an AI result.
+- Finish from a brief is implemented as catalogue-bounded evaluation with staged finish intents. The homepage "Finishes" item uses the `website-finish-alternatives` clip; show only what that clip captures, and do not label a manually authored interior as an AI result.
 
 ---
 
@@ -296,8 +318,10 @@ as a lemniscate, on a dark teal tile. The mark always travels on its tile; it is
 not a transparent glyph, and it is never redrawn for the site. It is the primary
 brand signal and is used with restraint; see `icon-reference-notes.md`.
 
-There is **no product demo video** yet. The Home page reserves a slot for one.
-Do not fabricate a video embed or imply a walkthrough exists.
+Short website clips of the real product live in `client/public/showcase/`
+(`website-*`); their provenance is in
+`docs/showcase-evidence.md`. They are real captures. Do not fabricate a video
+embed or imply a walkthrough that was not captured.
 
 ---
 
@@ -345,10 +369,9 @@ concrete example — it is real and it is verified.
 - Product geometry and finishes captured at revision 267; representative rates added at revision 268 without changing geometry. The project was renamed through the normal project API.
 - Live quantity response at revision 268: all rates entered; total ₹45,64,862 including ₹6,96,335 GST. Rates are illustrative, not a market-price promise or quotation. Quantities remain model-derived.
 - The 3D hero uses the actual GLB export. A website viewer sets its camera, lights and ground plane; it does not author substitute house geometry. The initial poster is captured from that viewer. The GLB is loaded only on request.
-- Three Remotion demos show real exterior brief/inspiration, finish brief/authored reference, and Ask Jodu/source interactions. They use the managed browser and preserve the authored house.
-- Product screenshots, finish-brief entry and Ask Jodu are real platform captures. The manual wall-drawing video comes from the published product help catalogue and uses a separate demonstration project.
-- The PDF sheet preview is the existing authentic 30 × 40 ft reference-house output, explicitly labelled separately. Strict PDF exports for The Gable House are currently blocked by unresolved/unsupported roof and structure relationships.
-- AI inspiration images come from Jodu’s actual Exterior Ideas workflow and are explicitly labelled inspiration. They are not measured model views or photos of a built house.
+- Website clips show real exterior ideas, finish alternatives, Ask Jodu/source interactions, and client feedback on a captured view. They use the managed browser and preserve the authored house.
+- Product screenshots are real platform captures of The Gable House. Strict PDF exports for The Gable House are currently blocked by unresolved/unsupported roof and structure relationships, so the homepage shows no Gable House drawing sheet; it lists deliverable formats (PDF, DXF, CSV, IFC) as text.
+- Homepage structure is deliberately sparse: hero, who it is for, AI switcher, client feedback, product tabs with a deliverables list, and a closing section. Do not re-add explanatory blocks for basic modelling actions or provenance captions.
 - Mobile preview is excluded. The public homepage does not promote an untested mobile workflow.
 - Access uses the app and email links. There is no lead form or false delivery confirmation.
 - Local verification and capture provenance are recorded in `docs/showcase-evidence.md`.
