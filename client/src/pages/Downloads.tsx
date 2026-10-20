@@ -68,10 +68,9 @@ export default function Downloads() {
               </div>
               <h2>The current Jodu workspace.</h2>
               <p>
-                Use the account-based browser app to author and review building
-                projects. The current product surface covers the coordinated
-                house model, 3D review, schedules, quantity take-off, priced
-                BoQ, drawing sets, and exports.
+                Develop a house design, review it in 3D and prepare drawings,
+                schedules and estimates in the browser. Collect client feedback
+                in the project and keep design information connected.
               </p>
               <div className="platform-actions">
                 <a
@@ -157,8 +156,8 @@ export default function Downloads() {
                 briefs and site visits: notes, readings, photos, voice notes,
                 compass and plot marking. Review what you captured, then send
                 it to your Jodu project, where a professional reviews each
-                item. The phone does not author the building model and is not a
-                mobile version of the desktop workspace.
+                item. A new home concept experience for sketching rooms and
+                exploring layouts is in development.
               </p>
               <div className="platform-actions">
                 <a
@@ -229,7 +228,7 @@ export default function Downloads() {
               <JoduMark />
               <span className="brand-word">jodu</span>
             </a>
-            <p>A building modeller for homes from plan to build.</p>
+            <p>A platform for housing.</p>
           </div>
           <div className="footer-links">
             <a href="/">Product</a>

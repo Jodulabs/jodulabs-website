@@ -7,8 +7,8 @@ const features = [
   { id: "ask-jodu", name: "Ask Jodu", copy: "Ask about your project and inspect the source of the answer.", clip: "website-ask-jodu", label: "Asking Jodu how many rooms are on each storey and opening the source" },
 ];
 
-const liveAI = ["Brief to house programme", "Exterior ideas", "Facade design", "Finish alternatives", "Expert design review", "Project Q&A"];
-const soonAI = ["Floor plans from a brief", "Facade Studio", "Asset workbench"];
+const liveAI = ["Exterior ideas", "Finish alternatives", "Project Q&A"];
+const soonAI = ["Home concept sketching", "Sketch AI co-pilot"];
 
 export default function AIShowcase() {
   const [selected, setSelected] = useState(0);
@@ -27,8 +27,8 @@ export default function AIShowcase() {
       <div className="container">
         <div className="section-heading">
           <p className="eyebrow">AI assistance</p>
-          <h2>AI-powered, from brief to finish.</h2>
-          <p>Explore exteriors, compare finishes and ask about your project. You stay in control of the design.</p>
+          <h2>Explore options.<br />Keep the decisions.</h2>
+          <p>Explore exterior ideas, compare finish directions and ask questions grounded in your project. Review the options and choose what to take forward.</p>
         </div>
         <div className="ai-switcher">
           <div className="ai-list" role="group" aria-label="AI features">
@@ -37,7 +37,7 @@ export default function AIShowcase() {
           <InlineClip key={feature.clip} id={feature.clip} label={feature.label} />
         </div>
         <div className="ai-also">
-          <div><h3>Available now</h3><ul>{liveAI.map(item => <li key={item}>{item}</li>)}</ul></div>
+          <div><h3>Explore in Jodu</h3><ul>{liveAI.map(item => <li key={item}>{item}</li>)}</ul></div>
           <div><h3>In development</h3><ul className="is-soon">{soonAI.map(item => <li key={item}>{item}</li>)}</ul></div>
         </div>
       </div>
