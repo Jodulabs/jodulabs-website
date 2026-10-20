@@ -78,3 +78,43 @@ Language must be factual and restrained. Remove broad claims, inflated outcomes,
 The primary proof is a clean demo from Jodu and authentic product screenshots. The website should not imply customers, traction, reviews, or availability that the team has not confirmed. Desktop and Android should be labeled independently, with unreleased platforms clearly marked as coming soon or in development.
 
 Navigation should expose Product, Demo, and Downloads. The Downloads page is a utility page, not a sales page: show platform status, version/release information when available, and clear next actions. The visual system keeps the warm paper and clay accent but reduces decorative framing, hero theatrics, and promotional CTA density.
+
+## Style Decisions — Plans and Product Proof
+
+The Jodu mark reads as two offset architectural right angles, with a small clay terminal detail on the final “u”. The mark is the compact brand signal; it should not drift toward a generic loop or abstract technology symbol.
+
+Jodu Clay is used as a redline annotation system: section squares, status marks, active states, callout rules, and key action cues. It is not a broad decorative wash.
+
+Every major product visual is presented as a labeled drawing-set sheet with a concrete caption for the output shown: canvas, quantities, schedules, or plan sheet. The site uses authentic product captures only.
+
+Plans are intentionally provisional. The homepage may show the shape of access — Pilot, Individual, and Team — but must clearly label unreleased plans and avoid invented prices, limits, or availability. The website stays product-first; “About us” and investor-facing company sections are not part of the default information architecture unless there is real material to add.
+
+## Style Decisions — Platform Notation and Field Context
+
+Jodu, not Jodulabs, is the platform name. A dedicated, low-key notation field may show the name in Kannada, English, Tamil, Telugu, Urdu, and Hindi as a brand layer. It is not a pronunciation guide, a language selector, or a claim that the product has been localised into those languages. The scripts should carry the feel of a drawing-set notation sheet: ordered, quiet, and legible.
+
+Contextual imagery should show the material reality of Indian residential work — a house under construction, masonry, concrete, reinforcement, and site geometry. It functions as a faded documentary underlay and must not be confused with Jodu product output, a customer project, or a polished real-estate image. Treat it with the same restrained palette as the rest of the editorial system: softened, low-saturation, and framed by measured annotation details.
+
+## Style Decisions — Local-Script Logo Lock-Up
+
+This decision supersedes the proposed standalone notation field. The multilingual treatment belongs inside the hero as a background cue: the canonical Jodu mark sits above a single local-script wordmark, which changes slowly between selected scripts. The lock-up never has language labels, borders, cards, or explanatory copy. It should read like a light site stamp caught in the construction texture — visible enough to notice, quiet enough to leave the product proof in charge.
+
+## Style Decisions — Full-Bleed Motion Field
+
+This decision supersedes the placed logo lock-up. The hero should behave like a field of partially seen site material, not a composition with another framed brand component. Under the product copy and plan canvas, the construction image pans very slowly; oversized fragments of the Jodu name in local scripts and the canonical tiled logo each travel on independent paths at low contrast. Nothing is labelled or expected to be read as a translation. The result should feel discovered on a second look, with the content remaining fully legible at the first.
+
+### Refinement: Background stamp and script traces
+
+The motion field must avoid looking like a scatter of unrelated watermarks. It uses a few partially cropped stamps, each pairing the actual Jodu mark with a local-script word beneath it. Their independent, slow movement makes the relationship feel like a field condition while avoiding a formal lock-up or translation board.
+
+## Style Decisions — Technical Construction Atlas
+
+The final atmosphere should not become a visual collage. It uses three muted planes only: a completed Indian house, a house in progress, and a working floor-plan surface. CSS perspective places those planes at different depths, while slow wordmark movement gives the background dimensionality without calling attention to motion. The six Jodu language renderings are present as low-opacity technical traces rather than visible brand units. The site remains a serious technical product reference: construction context is present, but the product proof always leads.
+
+### Interaction refinement
+
+On desktop pointer devices, the atlas responds with a small perspective shift. This is the primary moment of dimensionality: it rewards exploration without adding a feature control, does not move copy or product proof, and is disabled for coarse pointers and reduced-motion preferences.
+
+### Three.js scene refinement
+
+The live scene is an original construction atlas, not a static backdrop. The finished home, build-stage home, and working plan sit on independent planes and drift at different rates. Jodu appears in Kannada, English, Tamil, Telugu, Urdu, and Hindi as partially cropped, low-opacity field traces rather than standalone labels. The animation should be discoverable over several seconds, never demand attention, and leave the hero copy and product proof fully legible.
