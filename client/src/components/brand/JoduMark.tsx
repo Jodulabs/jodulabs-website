@@ -11,7 +11,7 @@
 export default function JoduMark({ className = "brand-mark" }: { className?: string }) {
   return (
     <img
-      src="/brand/jodu-icon.svg"
+      src="/company/brand/jodu-icon.svg"
       alt=""
       aria-hidden={true}
       className={className}

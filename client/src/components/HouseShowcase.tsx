@@ -43,7 +43,7 @@ export default function HouseShowcase() {
     };
     const observer = new ResizeObserver(resize);
     observer.observe(element);
-    new GLTFLoader().load("/showcase/laterite-house.glb", gltf => {
+    new GLTFLoader().load("/company/showcase/laterite-house.glb", gltf => {
       const model = gltf.scene;
       if (!stopped) {
         scene.add(model);
