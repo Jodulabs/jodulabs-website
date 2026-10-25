@@ -27,9 +27,9 @@ export default function InlineClip({ id, label }: { id: string; label: string })
   };
 
   return <div className="media-frame inline-clip">
-    <video ref={video} muted loop playsInline preload="metadata" poster={`/showcase/${id}.png`} aria-label={label} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}>
-      <source src={`/showcase/${id}.mp4`} type="video/mp4" />
-      <source src={`/showcase/${id}.webm`} type="video/webm" />
+    <video ref={video} muted loop playsInline preload="metadata" poster={`/company/showcase/${id}.png`} aria-label={label} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}>
+      <source src={`/company/showcase/${id}.mp4`} type="video/mp4" />
+      <source src={`/company/showcase/${id}.webm`} type="video/webm" />
     </video>
     <button className="clip-toggle" type="button" aria-label={playing ? `Pause: ${label}` : `Play: ${label}`} onClick={toggle}>{playing ? <Pause size={13} /> : <Play size={13} />}</button>
   </div>;

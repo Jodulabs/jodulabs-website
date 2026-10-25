@@ -1,12 +1,15 @@
 {
   "name": "jodulabs-website",
   "compatibility_date": "2026-08-13",
+  // jodu.io is the app; this site owns only /company. jodulabs.com redirects here.
+  "routes": [{ "pattern": "jodu.io/company*", "zone_name": "jodu.io" }],
   // Static-assets-only Worker: Vite output is served directly, no Worker script.
   // `server/index.ts` is an Express app and does not run on Workers; the
   // esbuild half of `pnpm build` is unused here.
   "assets": {
     "directory": "./dist/public",
-    // Serves index.html for unmatched paths so /downloads resolves.
+    // Serves index.html for unmatched paths so /company/downloads resolves; the
+    // build copies it to the root because that is where the fallback looks.
     "not_found_handling": "single-page-application"
   }
 }

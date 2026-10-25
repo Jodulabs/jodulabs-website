@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import JoduMark from "../components/brand/JoduMark";
 
-const appUrl = "https://app.jodulabs.com/";
+const appUrl = "https://jodu.io/";
 const playUrl =
   "https://play.google.com/store/apps/details?id=com.jodulabs.jodu";
 
@@ -17,15 +17,15 @@ export default function Downloads() {
   return (
     <div className="utility-page">
       <header className="site-nav" data-testid="downloads-navigation">
-        <a className="brand" href="/" aria-label="Jodu home">
+        <a className="brand" href="/company/" aria-label="Jodu home">
           <JoduMark />
           <span className="brand-word">jodu</span>
         </a>
         <nav className="desktop-nav">
-          <a href="/">Product</a>
-          <a href="/#workflow">Demo</a>
-          <a href="/#access">Access</a>
-          <a className="is-active" href="/downloads">
+          <a href="/company/">Product</a>
+          <a href="/company/#workflow">Demo</a>
+          <a href="/company/#access">Access</a>
+          <a className="is-active" href="/company/downloads">
             Downloads
           </a>
           <a href="mailto:hello@jodulabs.com">
@@ -224,17 +224,17 @@ export default function Downloads() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <div>
-            <a className="brand" href="/">
+            <a className="brand" href="/company/">
               <JoduMark />
               <span className="brand-word">jodu</span>
             </a>
             <p>A platform for housing.</p>
           </div>
           <div className="footer-links">
-            <a href="/">Product</a>
-            <a href="/#workflow">Demo</a>
-            <a href="/#access">Access</a>
-            <a href="/downloads">Downloads</a>
+            <a href="/company/">Product</a>
+            <a href="/company/#workflow">Demo</a>
+            <a href="/company/#access">Access</a>
+            <a href="/company/downloads">Downloads</a>
             <a href="mailto:hello@jodulabs.com">Email us</a>
           </div>
           <div className="footer-meta">
