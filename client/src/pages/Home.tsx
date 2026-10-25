@@ -5,7 +5,6 @@ import InlineClip from "../components/InlineClip";
 import JoduMark from "../components/brand/JoduMark";
 const HouseShowcase = lazy(() => import("../components/HouseShowcase"));
 const appUrl = "https://jodu.io/";
-const playUrl = "https://play.google.com/store/apps/details?id=com.jodulabs.jodu";
 const phones = [
   { src: "/company/showcase/mobile-1.png", alt: "The Jodu Android app for the Sharma Residence project, offering a site visit and a house brief" },
   { src: "/company/showcase/mobile-2.png", alt: "A house brief in the Jodu Android app: a family of five, three bedrooms, a pooja room and a home office" },
@@ -61,7 +60,7 @@ export default function Home() {
         <InlineClip id="website-project-feedback" label="A client marks a spot on a captured view of the house and adds a note; the designer opens that note in the project" />
       </section>
       <section className="mobile-section container" id="mobile">
-        <div className="mobile-copy"><p className="eyebrow">Jodu on mobile</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on their phone. They arrive in the Jodu project for the designer to review.</p><a className="play-badge" href={playUrl} target="_blank" rel="noreferrer"><img src="/company/showcase/google-play-badge.png" alt="Get it on Google Play" width="564" height="168" /></a><div className="app-soon"><h3>In development: home concepts</h3><p>Arrange rooms, explore a layout in 3D and refine ideas with AI. We’re building a concept experience for your phone, with continuation on the web.</p><a className="text-link" href="#next">Explore the direction <ArrowRight size={16} /></a></div></div>
+        <div className="mobile-copy"><p className="eyebrow">Jodu on mobile</p><h2>Start the project<br />from your phone.</h2><p>Homeowners and site visitors capture the house brief and site details on their phone. They arrive in the Jodu project for the designer to review.</p><div className="app-soon"><h3>In development: home concepts</h3><p>Arrange rooms, explore a layout in 3D and refine ideas with AI. We’re building a concept experience for your phone, with continuation on the web.</p><a className="text-link" href="#next">Explore the direction <ArrowRight size={16} /></a></div></div>
         <div className="phone-row">{phones.map(phone => <img className="phone" src={phone.src} alt={phone.alt} width={720} height={1416} loading="lazy" key={phone.src} />)}</div>
       </section>
       <section className="section container product-section" id="workflow">
