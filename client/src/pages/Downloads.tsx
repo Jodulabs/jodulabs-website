@@ -10,6 +10,8 @@ import {
 import JoduMark from "../components/brand/JoduMark";
 
 const appUrl = "https://jodu.io/";
+const playUrl =
+  "https://play.google.com/store/apps/details?id=com.jodulabs.jodu";
 
 export default function Downloads() {
   return (
@@ -49,7 +51,7 @@ export default function Downloads() {
           </div>
           <p>
             Jodu has a live browser workspace, a desktop app in preparation, and
-            an Android companion in preparation. These surfaces have
+            an Android companion on Google Play. These surfaces have
             different roles and are not feature-equivalent.
           </p>
         </div>
@@ -144,7 +146,9 @@ export default function Downloads() {
             <div className="platform-copy">
               <div className="platform-label">
                 <span>Android companion</span>
-                <strong className="status-pill">In preparation</strong>
+                <strong className="status-pill status-pill-live">
+                  Live on Google Play
+                </strong>
               </div>
               <h2>Capture information away from the desk.</h2>
               <p>
@@ -156,13 +160,16 @@ export default function Downloads() {
                 exploring layouts is in development.
               </p>
               <div className="platform-actions">
-                <button
-                  className="button button-outline"
-                  disabled
-                  data-testid="android-download-disabled"
+                <a
+                  className="button button-dark"
+                  href={playUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="android-download-link"
                 >
-                  <ArrowDownToLine size={15} /> Coming soon
-                </button>
+                  <Smartphone size={16} /> Get it on Google Play{" "}
+                  <ArrowUpRight size={15} />
+                </a>
                 <span className="platform-note">
                   Android only. Works offline; sending needs a link to a Jodu
                   project.
