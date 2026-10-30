@@ -8,6 +8,7 @@ import {
   Globe2,
 } from "lucide-react";
 import JoduMark from "../components/brand/JoduMark";
+import SiteFooter from "../components/SiteFooter";
 
 const appUrl = "https://jodu.io/";
 const playUrl =
@@ -28,7 +29,8 @@ export default function Downloads() {
           <a className="is-active" href="/company/downloads">
             Downloads
           </a>
-          <a href="mailto:hello@jodulabs.com">
+          <a href="/company/about">About</a>
+          <a href="mailto:contact@jodulabs.com">
             Contact <ArrowUpRight size={13} />
           </a>
         </nav>
@@ -214,35 +216,14 @@ export default function Downloads() {
               <Check size={16} />
               <p>
                 For access questions or early testing, contact Jodu Labs or email
-                hello@jodulabs.com.
+                contact@jodulabs.com.
               </p>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="container footer-grid">
-          <div>
-            <a className="brand" href="/company/">
-              <JoduMark />
-              <span className="brand-word">jodu</span>
-            </a>
-            <p>A platform for housing.</p>
-          </div>
-          <div className="footer-links">
-            <a href="/company/">Product</a>
-            <a href="/company/#workflow">Demo</a>
-            <a href="/company/#access">Access</a>
-            <a href="/company/downloads">Downloads</a>
-            <a href="mailto:hello@jodulabs.com">Email us</a>
-          </div>
-          <div className="footer-meta">
-            <span>Jodu Labs / India</span>
-            <span>© 2026</span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
