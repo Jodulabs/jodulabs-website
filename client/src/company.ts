@@ -34,7 +34,7 @@ export const team: Person[] = [
     name: "Mahabaleshwar Hegde",
     role: "Investor & Advisor",
     photo: "/company/team/mahabaleshwar-hegde.jpg",
-    bio: "Software engineer with decades of experience in the IT industry. I solve problems around customer needs and make sure our organisation is part of customer success. Advisor in product ideas and strategies.",
+    bio: "Software engineer with decades of experience in the IT industry. I solve problems around customer needs and help make sure customers succeed. Advisor in product ideas and strategies.",
     links: [],
   },
 ];
