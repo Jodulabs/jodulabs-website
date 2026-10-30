@@ -9,7 +9,11 @@ release. Older release and showcase evidence remains dated below.
 
 ## Names and positioning
 
-- **Jodu Labs** is the company, based in India. Contact: hello@jodulabs.com.
+- **Jodu Labs** is the company, based in India. Contact: contact@jodulabs.com.
+  Registered as Jodulabs (OPC) Private Limited, CIN U62011KA2025OPC213343,
+  Honavar, Uttara Kannada, Karnataka. Publish the town only, never the street
+  address. Member of NVIDIA Inception (not an investment or endorsement).
+  Facts shown on the site live in `client/src/company.ts`.
 - **Jodu** is the public product name; lowercase `jodu` in the logo.
 - **Kalakar** is the internal repository name. Never put it in public copy,
   metadata or alt text.
