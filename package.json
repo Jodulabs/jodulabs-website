@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
-    "build": "rm -rf dist && vite build && cp dist/public/company/index.html dist/public/index.html && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "dev:survey": "vite --config vite.survey.config.ts",
+    "build": "rm -rf dist && vite build && cp dist/public/company/index.html dist/public/index.html && vite build --config vite.survey.config.ts && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",

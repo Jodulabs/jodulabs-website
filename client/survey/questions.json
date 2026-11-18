@@ -1,0 +1,30 @@
+{
+  "questions": {
+    "role": {"type": "single", "options": ["owner", "engineer", "contractor", "other"], "other_text": true},
+    "stage": {"type": "single", "options": ["plot-search", "have-plot", "plan", "building", "built"]},
+    "known": {"type": "multi", "options": ["dims", "facing", "budget", "floors", "beds", "rules", "none"], "exclusive": ["none"]},
+    "decide": {"type": "multi", "options": ["me", "spouse", "elders", "relatives", "engineer", "other"], "other_text": true},
+    "ideas": {"type": "multi", "options": ["nearby", "social", "eng-past", "web", "sketch", "other", "none"], "exclusive": ["none"], "other_text": true},
+    "explain": {"type": "single", "options": ["talk", "paper", "wa-photos", "list", "picked", "not-yet"]},
+    "vastu": {"type": "single", "options": ["strict", "flex", "elder", "no"]},
+    "musts": {"type": "multi", "options": ["pooja", "rental", "future-floor", "car", "elder-room", "utility", "shop", "terrace", "other"], "other_text": true},
+    "worry": {"type": "multi", "max": 2, "options": ["cost", "visualise", "understood", "late-change", "vastu", "approval", "space", "slow", "other"], "other_text": true},
+    "wish": {"type": "text", "optional": true},
+    "volume": {"type": "single", "options": ["1-5", "6-15", "16-40", "40+"]},
+    "unknown": {"type": "multi", "options": ["dims", "facing", "budget", "floors", "rules", "wants"]},
+    "capture": {"type": "single", "options": ["notebook", "wa", "form", "sketch", "memory", "other"], "other_text": true},
+    "revisions": {"type": "single", "options": ["1-2", "3-5", "6-10", "10+"]},
+    "lateWhy": {"type": "multi", "max": 2, "options": ["saw-it", "family", "vastu", "budget", "missed", "site", "other"], "other_text": true},
+    "hardQ": {"type": "text", "optional": true},
+    "talk": {"type": "dual", "groups": [
+      {"key": "lang", "options": ["en", "kn", "hi", "mix"]},
+      {"key": "mode", "options": ["type", "voice", "both"]}
+    ]}
+  },
+  "paths": {
+    "owner": ["role", "stage", "known", "decide", "ideas", "explain", "vastu", "musts", "worry", "wish", "talk"],
+    "pro": ["role", "volume", "unknown", "capture", "revisions", "lateWhy", "hardQ", "talk"]
+  },
+  "role_paths": {"owner": "owner", "other": "owner", "engineer": "pro", "contractor": "pro"},
+  "wants": ["early", "call"]
+}
