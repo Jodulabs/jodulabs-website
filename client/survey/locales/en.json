@@ -19,7 +19,7 @@
     "pickUpTo": "Pick up to {n}",
     "optional": "Optional",
     "typeHere": "Type in any language",
-    "givebackTitle": "That's it! Your answers are anonymous.",
+    "givebackTitle": "That's it! Your name isn't attached to your answers.",
     "givebackP": "If you'd like to hear from us, leave your details.",
     "name": "Name",
     "phone": "Phone / WhatsApp",
@@ -35,8 +35,8 @@
     "otherPlaceholder": "Tell us…"
   },
   "wants": {
-    "early": "Early access when Jodu launches",
-    "call": "Happy to talk for 10 minutes"
+    "early": "Tell me first when the Jodu app is ready",
+    "call": "The Jodu team can call me for 10 minutes to hear more"
   },
   "questions": {
     "role": {
