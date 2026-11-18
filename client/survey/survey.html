@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f3f1ec">
+<meta name="theme-color" content="#f7f7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#041e25" media="(prefers-color-scheme: dark)">
 <title>Jodu Home Survey</title>
 <meta name="description" content="A 2-minute survey about how you plan your house. Anonymous.">
 <link rel="icon" type="image/svg+xml" href="/company/favicon.svg">
@@ -11,78 +12,81 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: one question per screen, phone-first column, sticky bottom action bar. Red-oxide accent from Karnataka floors, concrete neutrals, blueprint ink. */
+/* One question per screen, phone-first column, sticky bottom action bar.
+   Light mode follows the company site (paper, deep-green ink); dark mode follows the Jodu mark (teal tile, mint stroke).
+   Anek Kannada carries both scripts; the site's own font has no Kannada. */
 :root{
-  --bg:#f3f1ec;--surface:#fffdf9;--ink:#1d2433;--muted:#5e6472;--line:#d9d4ca;
-  --accent:#9c3b26;--accent-ink:#ffffff;--accent-soft:#f4e3dc;
+  --bg:#f7f7f0;--surface:#ffffff;--ink:#23372e;--muted:#5e6a61;--line:#d2d9cc;
+  --primary:#23372e;--primary-ink:#f7f7f0;--chosen:#426554;--chosen-soft:#e4ebdc;--chosen-ink:#ffffff;--label:#426554;
+  --focus:#6d883c;
   --font:"Anek Kannada","Noto Sans Kannada","Noto Sans",system-ui,sans-serif;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#15181f;--surface:#1d212a;--ink:#ece9e3;--muted:#a3a7b1;--line:#333845;
-    --accent:#e07a5f;--accent-ink:#1a0d08;--accent-soft:#3a2520;color-scheme:dark;
+    --bg:#041e25;--surface:#0a2a31;--ink:#e6efe9;--muted:#9fb5ad;--line:#1d4048;
+    --primary:#74c1a9;--primary-ink:#041e25;--chosen:#74c1a9;--chosen-soft:#0e3b3b;--chosen-ink:#041e25;--label:#74c1a9;
+    --focus:#74c1a9;color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#15181f;--surface:#1d212a;--ink:#ece9e3;--muted:#a3a7b1;--line:#333845;
-  --accent:#e07a5f;--accent-ink:#1a0d08;--accent-soft:#3a2520;color-scheme:dark;
+  --bg:#041e25;--surface:#0a2a31;--ink:#e6efe9;--muted:#9fb5ad;--line:#1d4048;
+  --primary:#74c1a9;--primary-ink:#041e25;--chosen:#74c1a9;--chosen-soft:#0e3b3b;--chosen-ink:#041e25;--label:#74c1a9;
+  --focus:#74c1a9;color-scheme:dark;
 }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.45;-webkit-font-smoothing:antialiased}
 .app{max-width:560px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 16px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0 8px}
-.brand{font-weight:700;font-size:20px;letter-spacing:.01em}
-.brand small{font-weight:400;color:var(--muted);font-size:14px;margin-left:6px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 10px}
+.brand{display:inline-flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none}
+.brand img{width:30px;height:30px;border-radius:7px}
+.brand span{font-size:26px;font-weight:600;letter-spacing:-.05em;line-height:1}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
 .lang button{font:inherit;font-size:15px;border:0;background:transparent;color:var(--muted);padding:6px 14px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.progress{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 4px}
-.progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s ease}
+.lang button[aria-pressed="true"]{background:var(--primary);color:var(--primary-ink)}
+.progress{height:3px;background:var(--line);border-radius:3px;overflow:hidden;margin:6px 0 4px}
+.progress i{display:block;height:100%;background:var(--chosen);width:0;transition:width .25s ease}
 .count{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums;min-height:20px}
 main{flex:1;padding:18px 0 120px}
-h1{font-size:28px;line-height:1.2;margin:8px 0 12px;text-wrap:balance;font-weight:700}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--label);margin:8px 0 14px}
+h1{font-size:30px;line-height:1.15;margin:0 0 14px;text-wrap:balance;font-weight:600;letter-spacing:-.02em}
 h2{font-size:22px;line-height:1.3;margin:4px 0 6px;text-wrap:balance;font-weight:600}
 .hint{color:var(--muted);font-size:15px;margin:0 0 16px}
 .intro p{margin:0 0 14px;max-width:62ch}
-.facts{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
-.facts span{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;font-size:15px}
-.about{color:var(--muted);font-size:15px;text-decoration:underline;text-underline-offset:3px}
-.about:hover{color:var(--ink)}
 .opts{display:grid;gap:10px}
-.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;cursor:pointer;min-height:52px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;cursor:pointer;min-height:52px}
 .opt:hover{border-color:var(--muted)}
 .opt .box{flex:none;width:20px;height:20px;border:2px solid var(--muted);border-radius:50%;display:grid;place-items:center}
 .opt.multi .box{border-radius:5px}
-.opt[aria-checked="true"]{border-color:var(--accent);background:var(--accent-soft)}
-.opt[aria-checked="true"] .box{border-color:var(--accent);background:var(--accent)}
-.opt[aria-checked="true"] .box::after{content:"";width:6px;height:10px;border:solid var(--accent-ink);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.opt[aria-checked="true"]{border-color:var(--chosen);background:var(--chosen-soft)}
+.opt[aria-checked="true"] .box{border-color:var(--chosen);background:var(--chosen)}
+.opt[aria-checked="true"] .box::after{content:"";width:6px;height:10px;border:solid var(--chosen-ink);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
 .opt[aria-disabled="true"]{opacity:.45;cursor:not-allowed}
 .group+.group{margin-top:24px}
 .group h3{font-size:17px;font-weight:600;margin:0 0 10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips .opt{width:auto;min-height:44px;padding:9px 14px}
 label.f{display:block;font-size:15px;color:var(--muted);margin:14px 0 6px}
-input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px}
 textarea{min-height:130px;resize:vertical}
-input:focus,textarea:focus{outline:none;border-color:var(--accent)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+input:focus,textarea:focus{outline:none;border-color:var(--chosen)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .fields{margin-top:8px}
 .trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .bar{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(to top,var(--bg) 70%,transparent);padding:20px 16px 18px}
 .bar .in{max-width:528px;margin:0 auto;display:flex;gap:10px}
-.btn{font:inherit;font-weight:600;border-radius:12px;padding:13px 18px;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);flex:1}
+.btn{font:inherit;font-weight:600;border-radius:8px;padding:13px 18px;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:var(--primary-ink);flex:1}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
-.status{font-size:15px;color:var(--accent);min-height:22px;margin:12px 0 0}
+.status{font-size:15px;color:var(--ink);min-height:22px;margin:12px 0 0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
   <header>
-    <div class="brand">Jodu<small id="byline">by jodulabs</small></div>
+    <a class="brand" id="brand" href="/company/" target="_blank" rel="noopener"><img id="mark" alt="" width="30" height="30"><span>jodu</span></a>
     <div class="lang" role="group" id="langs"></div>
   </header>
   <div class="progress" aria-hidden="true"><i id="prog"></i></div>

@@ -2,14 +2,12 @@
   "language": "English",
   "ui": {
     "title": "Jodu Home Survey",
-    "byline": "by jodulabs",
     "languageLabel": "Language",
+    "eyebrow": "Home survey · 2 minutes",
     "introTitle": "Help us design better homes",
     "introP1": "Jodu helps families and engineers in India plan their house, from the first conversation to the drawings.",
     "introP2": "Whether you've already built, are building now or are still planning, we want to hear how you think about your house. There are no right answers.",
     "introAnon": "Anonymous, and you can skip the last step.",
-    "fact1": "About 2 minutes",
-    "fact2": "Mostly taps",
     "about": "About Jodu",
     "start": "Start",
     "next": "Next",
@@ -145,7 +143,12 @@
     },
     "volume": {
       "title": "How many homes do you work on in a year?",
-      "options": {"1-5": "1–5", "6-15": "6–15", "16-40": "16–40", "40+": "More than 40"}
+      "options": {
+        "1-5": "1–5",
+        "6-15": "6–15",
+        "16-40": "16–40",
+        "40+": "More than 40"
+      }
     },
     "unknown": {
       "title": "What do clients usually NOT know at the first meeting?",
@@ -170,7 +173,12 @@
     },
     "revisions": {
       "title": "On average, how many times does the plan change before construction starts?",
-      "options": {"1-2": "1–2", "3-5": "3–5", "6-10": "6–10", "10+": "More than 10"}
+      "options": {
+        "1-2": "1–2",
+        "3-5": "3–5",
+        "6-10": "6–10",
+        "10+": "More than 10"
+      }
     },
     "lateWhy": {
       "title": "What usually causes changes after construction starts?",
@@ -189,8 +197,23 @@
     "talk": {
       "title": "If you used a home-design assistant on your phone, how would you like to talk to it?",
       "groups": {
-        "lang": {"title": "Language", "options": {"en": "English", "kn": "Kannada", "hi": "Hindi", "mix": "A mix"}},
-        "mode": {"title": "Typing or speaking", "options": {"type": "Typing", "voice": "Voice notes", "both": "Both"}}
+        "lang": {
+          "title": "Language",
+          "options": {
+            "en": "English",
+            "kn": "Kannada",
+            "hi": "Hindi",
+            "mix": "A mix"
+          }
+        },
+        "mode": {
+          "title": "Typing or speaking",
+          "options": {
+            "type": "Typing",
+            "voice": "Voice notes",
+            "both": "Both"
+          }
+        }
       }
     }
   }

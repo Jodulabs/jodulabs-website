@@ -1,6 +1,7 @@
 // The Jodu home survey: one question per screen, branching by role, ending with an optional give-back.
 // Every visible string comes from locales/<code>.json; questions.json is identical to the API's copy.
 import survey from "./questions.json";
+import markUrl from "../public/brand/jodu-icon.svg";
 
 declare const __SURVEY_LANGUAGES__: Record<string, string>;
 
@@ -22,7 +23,6 @@ const ROLE_PATHS = survey.role_paths as Record<string, string>;
 const WANTS = survey.wants as string[];
 const GIVEBACK = "giveback";
 const API = (import.meta.env.VITE_API_URL || "https://api.jodu.io").replace(/\/$/, "");
-const ABOUT_URL = "/company/";
 const DRAFT_KEY = "jodu-survey-draft";
 const SUBMIT_TIMEOUT_MS = 20000;
 
@@ -134,7 +134,6 @@ function needsContact(): boolean {
 }
 
 const bar = (html: string) => ($("#bar").innerHTML = html);
-const aboutLink = () => `<p><a class="about" href="${ABOUT_URL}" target="_blank" rel="noopener">${t("ui", "about")}</a></p>`;
 
 function renderLanguages(): void {
   const group = $("#langs");
@@ -151,7 +150,7 @@ async function setLang(code: string): Promise<void> {
   state.lang = code;
   document.documentElement.lang = code;
   document.title = lookup(loaded[code], ["ui", "title"]) || document.title;
-  $("#byline").textContent = lookup(loaded[code], ["ui", "byline"]) || "";
+  $("#brand").setAttribute("aria-label", lookup(loaded[code], ["ui", "about"]) || "About Jodu");
   saveDraft();
   renderLanguages();
   render();
@@ -172,10 +171,9 @@ function render(): void {
     $("#prog").style.width = "0%";
     $("#count").textContent = "";
     main.innerHTML = `<section class="intro">
+      <p class="eyebrow">${t("ui", "eyebrow")}</p>
       <h1>${t("ui", "introTitle")}</h1>
       <p>${t("ui", "introP1")}</p><p>${t("ui", "introP2")}</p><p>${t("ui", "introAnon")}</p>
-      <div class="facts"><span>${t("ui", "fact1")}</span><span>${t("ui", "fact2")}</span></div>
-      ${aboutLink()}
     </section>`;
     bar(`<button class="btn primary" id="go" type="button">${t("ui", "start")}</button>`);
     $("#go").onclick = () => advance();
@@ -400,12 +398,13 @@ async function submit(): Promise<void> {
 function renderThanks(): void {
   $("#prog").style.width = "100%";
   $("#count").textContent = "";
-  $("#main").innerHTML = `<section><h1>${t("ui", "thanksTitle")}</h1><p>${t("ui", "thanksP")}</p>${aboutLink()}</section>`;
+  $("#main").innerHTML = `<section><h1>${t("ui", "thanksTitle")}</h1><p>${t("ui", "thanksP")}</p></section>`;
   bar("");
   window.scrollTo(0, 0);
 }
 
 async function start(): Promise<void> {
+  $<HTMLImageElement>("#mark").src = markUrl;
   const draft = readDraft();
   if (draft) {
     state.a = draft.a || {};
