@@ -7,7 +7,7 @@
     "introTitle": "Help us design better homes",
     "introP1": "Jodu helps families and engineers in India plan their house, from the first conversation to the drawings.",
     "introP2": "Whether you've already built, are building now or are still planning, we want to hear how you think about your house. There are no right answers.",
-    "introAnon": "Anonymous. Optional at the end: get a free 3D preview of your plot.",
+    "introAnon": "Anonymous, and you can skip the last step.",
     "fact1": "About 2 minutes",
     "fact2": "Mostly taps",
     "about": "About Jodu",
@@ -22,7 +22,7 @@
     "optional": "Optional",
     "typeHere": "Type in any language",
     "givebackTitle": "That's it! Your answers are anonymous.",
-    "givebackP": "If you'd like something back from us, leave your details.",
+    "givebackP": "If you'd like to hear from us, leave your details.",
     "name": "Name",
     "phone": "Phone / WhatsApp",
     "email": "Email",
@@ -36,7 +36,6 @@
     "thanksP": "Your answers have reached us."
   },
   "wants": {
-    "preview": "A free 3D preview of my plot",
     "early": "Early access when Jodu launches",
     "call": "Happy to talk for 10 minutes"
   },

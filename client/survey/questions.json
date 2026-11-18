@@ -26,5 +26,5 @@
     "pro": ["role", "volume", "unknown", "capture", "revisions", "lateWhy", "hardQ", "talk"]
   },
   "role_paths": {"owner": "owner", "other": "owner", "engineer": "pro", "contractor": "pro"},
-  "wants": ["preview", "early", "call"]
+  "wants": ["early", "call"]
 }
