@@ -31,7 +31,8 @@
     "failed": "Couldn't send. Check your connection and try again.",
     "retry": "Try again",
     "thanksTitle": "Thank you!",
-    "thanksP": "Your answers have reached us."
+    "thanksP": "Your answers have reached us.",
+    "otherPlaceholder": "Tell us…"
   },
   "wants": {
     "early": "Early access when Jodu launches",
@@ -77,7 +78,8 @@
         "spouse": "Husband / wife",
         "elders": "Parents / elders",
         "relatives": "Brothers, sisters or other relatives",
-        "engineer": "Mostly the engineer"
+        "engineer": "Mostly the engineer",
+        "other": "Other"
       }
     },
     "ideas": {
@@ -88,7 +90,8 @@
         "eng-past": "The engineer's past projects",
         "web": "Pinterest / websites",
         "sketch": "My own sketch",
-        "none": "No clear idea yet"
+        "none": "No clear idea yet",
+        "other": "Other"
       }
     },
     "explain": {
@@ -121,7 +124,8 @@
         "elder-room": "Ground-floor room for elders",
         "utility": "Utility / washing area",
         "shop": "Shop at the front",
-        "terrace": "Open terrace / sit-out"
+        "terrace": "Open terrace / sit-out",
+        "other": "Other"
       }
     },
     "worry": {
@@ -134,7 +138,8 @@
         "vastu": "Vastu clashing with the layout",
         "approval": "Approvals and permissions",
         "space": "Wasted space / poor light and air",
-        "slow": "Everything takes too long"
+        "slow": "Everything takes too long",
+        "other": "Other"
       }
     },
     "wish": {
@@ -168,7 +173,8 @@
         "wa": "WhatsApp chat",
         "form": "A fixed form or checklist",
         "sketch": "Rough sketch",
-        "memory": "I remember it"
+        "memory": "I remember it",
+        "other": "Other"
       }
     },
     "revisions": {
@@ -188,7 +194,8 @@
         "vastu": "Vastu advice came late",
         "budget": "Budget changed",
         "missed": "A need was missed at the start",
-        "site": "Site or approval problem"
+        "site": "Site or approval problem",
+        "other": "Other"
       }
     },
     "hardQ": {

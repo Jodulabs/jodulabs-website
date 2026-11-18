@@ -11,6 +11,7 @@ type Question = {
   max?: number;
   exclusive?: string[];
   optional?: boolean;
+  other_text?: boolean;
   groups?: { key: string; options: string[] }[];
 };
 type Answer = string | string[] | Record<string, string>;
@@ -25,6 +26,8 @@ const GIVEBACK = "giveback";
 const API = (import.meta.env.VITE_API_URL || "https://api.jodu.io").replace(/\/$/, "");
 const DRAFT_KEY = "jodu-survey-draft";
 const SUBMIT_TIMEOUT_MS = 20000;
+const OTHER = "other";
+const otherKey = (id: string) => `${id}_other`;
 
 const LANGS = __SURVEY_LANGUAGES__;
 const CODES = Object.keys(LANGS).sort((a, b) => (a === "en" ? -1 : b === "en" ? 1 : a.localeCompare(b)));
@@ -204,7 +207,10 @@ function render(): void {
           return `<button type="button" class="opt ${q.type}" role="${q.type === "single" ? "radio" : "checkbox"}" id="o-${id}-${o}" data-v="${o}" aria-checked="${on}" aria-disabled="${full && !on}"><span class="box"></span><span>${t("questions", id, "options", o)}</span></button>`;
         })
         .join("") +
-      `</div>`;
+      `</div>` +
+      (q.other_text && sel.includes(OTHER)
+        ? `<input type="text" class="other-text" id="x-${id}" maxlength="300" aria-label="${t("questions", id, "options", OTHER)}" placeholder="${t("ui", "otherPlaceholder")}" value="${esc((state.a[otherKey(id)] as string) || "")}">`
+        : "");
   } else if (q.type === "dual") {
     const v = (state.a[id] as Record<string, string>) || {};
     body = (q.groups || [])
@@ -247,6 +253,10 @@ function render(): void {
       advance();
     };
   main.querySelectorAll<HTMLButtonElement>(".opt").forEach(b => b.addEventListener("click", () => choose(id, b)));
+  document.getElementById("x-" + id)?.addEventListener("input", event => {
+    state.a[otherKey(id)] = (event.target as HTMLInputElement).value;
+    saveDraft();
+  });
 }
 
 function saveText(id: string): void {
@@ -269,9 +279,12 @@ function choose(id: string, b: HTMLButtonElement): void {
       if (state.a.talk) keep.talk = state.a.talk;
       state.a = keep;
     }
+    clearTimeout(advanceTimer);
+    if (v !== OTHER) delete state.a[otherKey(id)];
     saveDraft();
     render();
-    clearTimeout(advanceTimer);
+    // Choosing "Other" waits so they can type before pressing Next.
+    if (v === OTHER && q.other_text) return void document.getElementById("x-" + id)?.focus();
     const at = state.step;
     advanceTimer = setTimeout(() => {
       if (state.step === at) advance();
@@ -288,12 +301,14 @@ function choose(id: string, b: HTMLButtonElement): void {
       if (!q.max || arr.length < q.max) arr.push(v);
     }
     state.a[id] = arr;
+    if (!arr.includes(OTHER)) delete state.a[otherKey(id)];
   } else if (q.type === "dual") {
     state.a[id] = { ...((state.a[id] as Record<string, string>) || {}), [b.dataset.g!]: v };
   }
   saveDraft();
   render();
-  document.getElementById(b.id)?.focus();
+  const typing = v === OTHER && document.getElementById("x-" + id);
+  (typing || document.getElementById(b.id))?.focus();
 }
 
 function renderGiveback(): void {
@@ -364,7 +379,11 @@ async function submit(): Promise<void> {
     submission_id: state.submissionId,
     lang: state.lang,
     src,
-    answers: Object.fromEntries(Object.entries(state.a).filter(([id]) => onPath.has(id))),
+    answers: Object.fromEntries(
+      Object.entries(state.a)
+        .map(([id, value]): [string, Answer] => [id, typeof value === "string" ? value.trim() : value])
+        .filter(([id, value]) => onPath.has(id.replace(/_other$/, "")) && value !== ""),
+    ),
     contact: c.wants.length
       ? { wants: c.wants, name: c.name.trim(), phone: c.phone.trim(), email: c.email.trim(), town: c.town.trim() }
       : null,
