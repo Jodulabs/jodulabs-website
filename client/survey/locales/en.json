@@ -1,0 +1,198 @@
+{
+  "language": "English",
+  "ui": {
+    "title": "Jodu Home Survey",
+    "byline": "by jodulabs",
+    "languageLabel": "Language",
+    "introTitle": "Help us design better homes",
+    "introP1": "Jodu helps families and engineers in India plan their house, from the first conversation to the drawings.",
+    "introP2": "Whether you've already built, are building now or are still planning, we want to hear how you think about your house. There are no right answers.",
+    "introAnon": "Anonymous. Optional at the end: get a free 3D preview of your plot.",
+    "fact1": "About 2 minutes",
+    "fact2": "Mostly taps",
+    "about": "About Jodu",
+    "start": "Start",
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "of": "of",
+    "pickAll": "Pick all that apply",
+    "pickOne": "Pick one",
+    "pickUpTo": "Pick up to {n}",
+    "optional": "Optional",
+    "typeHere": "Type in any language",
+    "givebackTitle": "That's it! Your answers are anonymous.",
+    "givebackP": "If you'd like something back from us, leave your details.",
+    "name": "Name",
+    "phone": "Phone / WhatsApp",
+    "email": "Email",
+    "town": "Town / city",
+    "needContact": "Add a phone number or email so we can reach you.",
+    "submit": "Submit",
+    "sending": "Sending…",
+    "failed": "Couldn't send. Check your connection and try again.",
+    "retry": "Try again",
+    "thanksTitle": "Thank you!",
+    "thanksP": "Your answers have reached us."
+  },
+  "wants": {
+    "preview": "A free 3D preview of my plot",
+    "early": "Early access when Jodu launches",
+    "call": "Happy to talk for 10 minutes"
+  },
+  "questions": {
+    "role": {
+      "title": "Which describes you best?",
+      "options": {
+        "owner": "Home owner (planning, building or recently built)",
+        "engineer": "Civil engineer / architect",
+        "contractor": "Contractor / builder / mestri",
+        "other": "Other"
+      }
+    },
+    "stage": {
+      "title": "Where are you right now?",
+      "options": {
+        "plot-search": "Looking for a plot",
+        "have-plot": "Have a plot, exploring ideas",
+        "plan": "Plan is being drawn",
+        "building": "Construction is going on",
+        "built": "House finished in the last 3 years"
+      }
+    },
+    "known": {
+      "title": "Which of these did you know clearly at your first meeting with the engineer?",
+      "hint": "Haven't met one yet? Pick what you know today.",
+      "options": {
+        "dims": "Plot size and dimensions",
+        "facing": "Which direction the plot faces",
+        "budget": "Total budget",
+        "floors": "Number of floors",
+        "beds": "Number of bedrooms",
+        "rules": "Setback / approval rules",
+        "none": "None of these clearly"
+      }
+    },
+    "decide": {
+      "title": "Who has a say in the final plan?",
+      "options": {
+        "me": "Me",
+        "spouse": "Husband / wife",
+        "elders": "Parents / elders",
+        "relatives": "Brothers, sisters or other relatives",
+        "engineer": "Mostly the engineer"
+      }
+    },
+    "ideas": {
+      "title": "Where did your ideas for the house come from?",
+      "options": {
+        "nearby": "A relative's or neighbour's house",
+        "social": "YouTube / Instagram",
+        "eng-past": "The engineer's past projects",
+        "web": "Pinterest / websites",
+        "sketch": "My own sketch",
+        "none": "No clear idea yet"
+      }
+    },
+    "explain": {
+      "title": "How did you mainly explain what you wanted?",
+      "options": {
+        "talk": "Talked in person",
+        "paper": "Drew it on paper",
+        "wa-photos": "Sent photos on WhatsApp",
+        "list": "Wrote a list",
+        "picked": "The engineer showed options, I picked one",
+        "not-yet": "Haven't explained it to anyone yet"
+      }
+    },
+    "vastu": {
+      "title": "How much does Vastu shape your plan?",
+      "options": {
+        "strict": "Must follow it strictly",
+        "flex": "Prefer it, but can adjust",
+        "elder": "An elder in the family insists",
+        "no": "Doesn't matter to us"
+      }
+    },
+    "musts": {
+      "title": "Apart from bedrooms, what must the house have?",
+      "options": {
+        "pooja": "Pooja room",
+        "rental": "A portion to rent out",
+        "future-floor": "Room to add a floor later",
+        "car": "Car parking",
+        "elder-room": "Ground-floor room for elders",
+        "utility": "Utility / washing area",
+        "shop": "Shop at the front",
+        "terrace": "Open terrace / sit-out"
+      }
+    },
+    "worry": {
+      "title": "What is your biggest worry or headache?",
+      "options": {
+        "cost": "Cost going over budget",
+        "visualise": "Can't picture the house from 2D drawings",
+        "understood": "The engineer doesn't get what I want",
+        "late-change": "Changes after construction starts",
+        "vastu": "Vastu clashing with the layout",
+        "approval": "Approvals and permissions",
+        "space": "Wasted space / poor light and air",
+        "slow": "Everything takes too long"
+      }
+    },
+    "wish": {
+      "title": "What is one thing you wish your engineer had asked you at the start?",
+      "hint": "Still planning? Tell us what you'd want them to ask you."
+    },
+    "volume": {
+      "title": "How many homes do you work on in a year?",
+      "options": {"1-5": "1–5", "6-15": "6–15", "16-40": "16–40", "40+": "More than 40"}
+    },
+    "unknown": {
+      "title": "What do clients usually NOT know at the first meeting?",
+      "options": {
+        "dims": "Plot size and dimensions",
+        "facing": "Which direction the plot faces",
+        "budget": "A realistic budget",
+        "floors": "Number of floors",
+        "rules": "Setback / approval rules",
+        "wants": "What they actually want"
+      }
+    },
+    "capture": {
+      "title": "How do you note down the client's requirements today?",
+      "options": {
+        "notebook": "Notebook",
+        "wa": "WhatsApp chat",
+        "form": "A fixed form or checklist",
+        "sketch": "Rough sketch",
+        "memory": "I remember it"
+      }
+    },
+    "revisions": {
+      "title": "On average, how many times does the plan change before construction starts?",
+      "options": {"1-2": "1–2", "3-5": "3–5", "6-10": "6–10", "10+": "More than 10"}
+    },
+    "lateWhy": {
+      "title": "What usually causes changes after construction starts?",
+      "options": {
+        "saw-it": "Client saw it built and didn't like it",
+        "family": "A family member or elder stepped in",
+        "vastu": "Vastu advice came late",
+        "budget": "Budget changed",
+        "missed": "A need was missed at the start",
+        "site": "Site or approval problem"
+      }
+    },
+    "hardQ": {
+      "title": "Which question do you always ask that clients find hard to answer?"
+    },
+    "talk": {
+      "title": "If you used a home-design assistant on your phone, how would you like to talk to it?",
+      "groups": {
+        "lang": {"title": "Language", "options": {"en": "English", "kn": "Kannada", "hi": "Hindi", "mix": "A mix"}},
+        "mode": {"title": "Typing or speaking", "options": {"type": "Typing", "voice": "Voice notes", "both": "Both"}}
+      }
+    }
+  }
+}
